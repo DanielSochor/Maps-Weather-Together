@@ -1,4 +1,7 @@
 $(document).ready(function () {
+
+    //Open Weather API
+    //key: 9017eb1defd779b9b948d111f75e9386
     
     var platform = new H.service.Platform({
         'app_id': '{wcU125hOha6uKl56A00d}',
