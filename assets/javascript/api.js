@@ -5,6 +5,19 @@ $(document).ready(function () {
         'app_code': '{DD3bbz78Ju_Tb88oKzx0kA}'
         });
 
+    var maptypes = platform.createDefaultLayers();
+
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.normal.map,
+        {
+          zoom: 10,
+          center: { lng: 13.4, lat: 52.51 }
+        });
+
+        //https://developer.here.com/documentation/maps/topics/quick-start.html
+
+
     function getMap() {
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
             textToSearchFor + "&api_key=AlyafWwXDhMSFvBu5VaS8eH3vslwmZ3z&limit=" + numberOfGifsToDisplay;
@@ -29,4 +42,7 @@ $(document).ready(function () {
             // }
         });
     }
+
+
+
 })
