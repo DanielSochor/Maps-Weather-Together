@@ -7,6 +7,13 @@ body {
     background-color: gray;
 }
 
-h2 {
+#options {
     background-color: gray;
+}
+#inputs {
+    background-color:greenyellow;
+}
+
+footer {
+    text-align: center;
 }

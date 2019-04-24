@@ -18,38 +18,45 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12" id="header">
+            <div class="col-md-12" id="header">
                 <h1>Where Ya Going?</h1>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-4">
-                <!-- may trade row-column layout for standard tr, td, th -->
-                <form>
+            <div class="col-md-4">
+
+                <form id="inputs">
                     <tr>
-                        Where are ya?
+                        <th>Where are ya?</th>
                     </tr>
                     <tr>
-                        <input type="text">
+                        <input type="text" id="WhereAreYa">
                     </tr>
                     <tr>
-                        Where ya going?
+                        <th>Where ya going?</th>
                     </tr>
                     <tr>
-                        <input type="text">
+                        <input type="text" id="whereYaGoing">
                     </tr>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                <div class="ads">
+                    <h3>ads go here</h3>
+                </div>
+
             </div>
-            <div class="col-8">
-                <h2>Ways to get there.</h2>
+
+            <div class="col-md-8">
+                <h2 id="options">Ways to get there.</h2>
+                    <div class="transportation">mode of transportation</div>
+                    <div class="timetaken">Time it takes</div>
             </div>
 
         </div>
     </div>
 
-    <footer></footer>
+    <footer>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</footer>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
