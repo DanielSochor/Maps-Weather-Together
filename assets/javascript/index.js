@@ -1,2 +1,6 @@
-var test = "hello world!";
-var pull = "goodbye!";
+$(document).ready(function () {
+
+
+
+
+})
