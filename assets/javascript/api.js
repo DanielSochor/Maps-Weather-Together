@@ -1,9 +1,25 @@
 $(document).ready(function () {
+
+    //Open Weather API
+    //key: 9017eb1defd779b9b948d111f75e9386
     
     var platform = new H.service.Platform({
         'app_id': '{wcU125hOha6uKl56A00d}',
         'app_code': '{DD3bbz78Ju_Tb88oKzx0kA}'
         });
+
+    var maptypes = platform.createDefaultLayers();
+
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.normal.map,
+        {
+          zoom: 10,
+          center: { lng: 13.4, lat: 52.51 }
+        });
+
+        //https://developer.here.com/documentation/maps/topics/quick-start.html
+
 
     function getMap() {
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -29,4 +45,7 @@ $(document).ready(function () {
             // }
         });
     }
+
+
+
 })
