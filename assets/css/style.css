@@ -1,3 +1,12 @@
-#Header {
+body {
+    background-color: lightgray;
+}
+
+#header {
     text-align: center;
+    background-color: gray;
+}
+
+h2 {
+    background-color: gray;
 }

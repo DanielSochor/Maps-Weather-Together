@@ -16,28 +16,45 @@
 </head>
 
 <body>
-    <row>
-        <div id="Header">
-            <h1>Where Ya Going?</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12" id="header">
+                <h1>Where Ya Going?</h1>
+            </div>
         </div>
-    </row>
-    <row>
-        <col-3>
-        <!-- may trade row-column layout for standard tr, td, th -->
-        <input type="text">
-        <input type="text">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </col-3>
-        <col-9>
-        </col-9>
 
-    </row>
+        <div class="row">
+            <div class="col-4">
+                <!-- may trade row-column layout for standard tr, td, th -->
+                <form>
+                    <tr>
+                        Where are ya?
+                    </tr>
+                    <tr>
+                        <input type="text">
+                    </tr>
+                    <tr>
+                        Where ya going?
+                    </tr>
+                    <tr>
+                        <input type="text">
+                    </tr>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-8">
+                <h2>Ways to get there.</h2>
+            </div>
 
+        </div>
+    </div>
 
-
+    <footer></footer>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/index.js"></script>
+    <script src="assets/javascript/api.js"></script>
 </body>
 
 </html>
