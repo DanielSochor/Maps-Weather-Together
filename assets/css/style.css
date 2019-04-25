@@ -1,0 +1,25 @@
+.card {
+    width: 400px;
+}
+.transport-card {
+    width: 400px;
+}
+#directions {
+    margin-top: 50px;
+}
+input {
+   color: white;
+   background-color: none; 
+}
+.mode-icon {
+    color: white;
+}
+.mode-icon:hover {
+    color: #e57373;
+}
+.btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 15px 30px;
+}
