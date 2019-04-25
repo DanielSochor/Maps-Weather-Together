@@ -1,4 +1,5 @@
 
+
 body {
     background-color: lightgray;
 }
@@ -18,3 +19,7 @@ body {
 footer {
     text-align: center;
 };
+body{
+    background-image: url("background.jpg");
+    background-repeat: no-repeat; 
+}
