@@ -16,17 +16,33 @@ $(document).ready(function () {
             lat = parseFloat(response.coord.lat);
             lon = parseFloat(response.coord.lon);
 
-            var coordinates = {
+            var coordinateStart = {
                 lat:lat, lng:lon
             }
+            var coordinateEnd = {
+                lat:39.76838, lng:-86.15084
+            }
 
-            moveMapTo(map,coordinates);
+            moveMapTo(map,coordinateStart);
+            addPolylineToMap(map,coordinateStart,coordinateEnd);
         })
     };
 
-    function moveMapTo(map,coordinates){
+    function addPolylineToMap(map,coordinateStart,coordinateEnd) {
+        var strip = new H.geo.Strip();
 
-        map.setCenter(coordinates)
+        strip.pushPoint(coordinateStart);
+        strip.pushPoint(coordinateEnd);
+
+        map.addObject(new H.map.Polyline(
+          strip, { style: { lineWidth: 4 }}
+        ));
+
+      }
+
+    function moveMapTo(map,coordinateStart){
+
+        map.setCenter(coordinateStart)
         map.setZoom(14);
       }
       
