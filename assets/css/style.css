@@ -1,25 +1,36 @@
-
-
-body {
-    background-color: lightgray;
+*{
+    box-sizing: border-box;
 }
-
+body{
+    background-image: url("../photos/background.jpg"); 
+}
 #header {
     text-align: center;
-    background-color: gray;
+    background-color: #a6a6a6;
+    color: #262626;
 }
 
-#options {
-    background-color: gray;
+#modes {
+    background-color: #a6a6a6;
+    float: left;
 }
 #inputs {
-    background-color:greenyellow;
+    color: white;
+    background-color: #a6a6a6;
+}
+#button{
+    background-color: #0d0d0d;
+}
+#triptime{
+    float: left;
 }
 
 footer {
+    background-color: #a6a6a6;
+    height: 75px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
 };
-body{
-    background-image: url("background.jpg");
-    background-repeat: no-repeat; 
-}
+
