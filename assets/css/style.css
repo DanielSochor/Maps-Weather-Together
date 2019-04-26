@@ -1,1 +1,29 @@
+<<<<<<< HEAD
 /* css file */
+=======
+
+
+body {
+    background-color: lightgray;
+}
+
+#header {
+    text-align: center;
+    background-color: gray;
+}
+
+#options {
+    background-color: gray;
+}
+#inputs {
+    background-color:greenyellow;
+}
+
+footer {
+    text-align: center;
+};
+body{
+    background-image: url("background.jpg");
+    background-repeat: no-repeat; 
+}
+>>>>>>> parent of 6a273d3... css
