@@ -2,7 +2,10 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("../photos/background.jpg"); 
+    background-image: url("../photos/background.jpg");
+    font-family:"Lucida Grande",Tahoma,sans-serif;
+    color: rgb(102, 102, 102);
+    font-size: 80%; 
 }
 #header {
     text-align: center;
@@ -17,13 +20,22 @@ body{
 #inputs {
     color: white;
     background-color: #a6a6a6;
+    float: left;
 }
 #button{
     background-color: #0d0d0d;
 }
-#triptime{
+#map{
     float: left;
 }
+
+  b, strong {
+    color: black;
+  }
+  code {
+    font-weight: 700;
+    font-size: 120%;
+  }
 
 footer {
     background-color: #a6a6a6;
