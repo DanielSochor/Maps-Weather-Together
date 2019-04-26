@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>WhereYaGoin?</title>
@@ -20,6 +25,7 @@
                 <h1>Where Ya Going?</h1>
             </div>
         </div>
+
         
             <div class="col-md-4">
                 <form id="inputs">
@@ -38,21 +44,35 @@
                     
             </div>
             </div>
-            <div class="col-md-7" id="modes">
+            <div class="col-md-8" id="modes">
                     <div class= "row" id="transportation">
                         <h3>Mode of Transportation</h3>
                     </div>
-                    <div class= "row" id="triptime">
+                    <div id= "output1"></div>
+                    <div class= "row" id="time">
                         <h3>Time it takes</h3>
                     </div>
+                    <div id="output2"></div>
+            </div>
+            <div class= "col-md-12" id= "map">
+                    <div id="map" style="width: 600px; height: 400px; background: grey"></div>
             </div>
         </div>
     </div>
-
+    
+    
     <footer><h2>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h2></footer>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/index.js"></script>
     <script src="assets/javascript/api.js"></script>
+
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
+
 </body>
 </html>
