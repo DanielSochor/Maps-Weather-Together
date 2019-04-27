@@ -1,100 +1,28 @@
-*{
-    box-sizing: border-box;
+.card {
+    width: 400px;
 }
-body{
-    background-image: url("../photos/background.jpg");
-    font-family:"Lucida Grande",Tahoma,sans-serif;
-    color: rgb(102, 102, 102);
-    font-size: 80%; 
-    background-attachment: fixed;
+.transport-card {
+    width: 400px;
 }
-h5{
-    background-color: white;
-    color: black;
+#directions {
+    margin-top: 50px;
 }
-#header {
-    top: 0;
-    width: 100%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: left;
-    background-color: #262626;
-    color: white;
-    border-style: solid;
-    border-color: #a6a6a6;
-    background-image: url("../photos/black-and-white-box-background.jpg");
+input {
+   color: white;
+   background-color: none; 
 }
-#inputsContainer {
-    background-image: url("../photos/backgroundforinputs.jpg");
-    border-style: groove;
-    border-color: #595959;
-    border-width: 5px;
-    left: 15px;
-    color: white;
-    background-color: #a6a6a6;
-    float: left;
-    color: white;
-    padding: 15px;
-    margin: 10px;
-    width: 45%;
-    height: 200px;
-    opacity: .9;
+i .large {
+    margin: 50px;
 }
-#results{
-    padding: 15px;
-    margin: 10px;
-    opacity: .9;
-    border-width: 15px;
-    border-style: solid;
-    border-color:#595959;
-    background-color: #a6a6a6;
-    width: 65%;
-    float: left;
-    height: 200px;
+.mode-icon {
     color: white;
 }
-#time{
-    width: 100px;
-
+.mode-icon:hover {
+    color: #e57373;
 }
-#modes{
-    width: 100px;
-}
-#map{
-    opacity: 0.8;
-    border-style: solid;
-    border-color: black;
-    float: left;
-    width: 75%;
-}
-#button{
-    background-color: #0d0d0d;
-    border-style: groove;
-    border-collapse: white;
-}
-#container::before{
-    content: '';
+.btn {
     position: absolute;
-    top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    filter: blur(10px);
-    background: inherit;
+    margin: 15px 30px;
 }
-#container{
-    background: inherit;
-}
-footer {
-    opacity: 0.7;
-    background-color: #a6a6a6;
-    height: 35px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    border-style: solid;
-    border-color: black;
-    color: white;
-};
-

@@ -1,75 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Project-1</title>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>WhereYaGoin?</title>
 </head>
+
 <body>
-        <div class="container.fluid" id="container">
-            <div class= "row">
-                <div class= "col-md-12" id= "header">
-                    <h5>Where Ya Goin?</h5>
-                </div>
+  
+    <!-- Navigation -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo center">Where Ya Going?</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="">Maps<i class="medium material-icons right">map</i></a></li>
+                    <li><a href="">Weather<i class="medium material-icons right">wb_sunny</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container" id="directions">
+
+        <!-- Row with address input cards -->
+
         <div class="row">
-            <div class= "col-md-12">
-                <div class= "row">
-                    <div class= "col-md-4" id= "inputsContainer">
-                        <form id="inputsform">
-                                <div class="form-group">
-                                    <div class="form-group">
-                                        <input type="location" class="form-control" id="exampleInputLocal" placeholder="Where are ya?">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="location" class="form-control" id="exampleInputLocal" placeholder="Where ya goin?">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" id="button">
-                                        Submit
-                                    </button>
-                                </form>
-                    </div>
-                </div>
-            <div class= "row">
-                <div class= "col-md-8" id="results">
-                    <div class= "row">
-                        <div class= "col-md-3" id="modes">
-                            <h6>Mode of Transportation</h6>
-                            <div id= "output1"></div>
+
+            <!-- First input card for id a -->
+
+            <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title"><i class="small material-icons left">location_on</i>From</span>
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Street" id="a-street" type="text" class="validate">
+                                    <label for="street-address"></label>
+                                </div>
                             </div>
-                        <div class="col-md-3" id="time">
-                            <h6>Time it takes</h6>
-                            <div id="output2"></div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="City" id="a-city" type="text" class="validate">
+                                    <label for="city"></label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input placeholder="State" id="a-state" type="text" class="validate">
+                                    <label for="state"></label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input placeholder="Zip Code" id="a-zip" type="text" class="validate">
+                                    <label for="zip_code"></label>
+                                </div>
                             </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                    <div class= "col-md-12" id= "map">
-                            <div id="map" style="width: 600px; height: 400px; background: grey"></div>
+            <div class="col s12 m6 valign-wrapper center-align">
+                    <i class="large material-icons">more_horiz</i>
+            </div>
+            <div class="col l6">
+
+                <!-- Second input card with id b -->
+
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title"><i class="small material-icons left">location_on</i>To</span>
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Street" id="b-street" type="text" class="validate">
+                                    <label for="street-address"></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="City" id="b-city" type="text" class="validate">
+                                    <label for="city"></label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input placeholder="State" id="b-state" type="text" class="validate">
+                                    <label for="state"></label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input placeholder="Zip Code" id="b-zip" type="text" class="validate">
+                                    <label for="zip_code"></label>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                <button class="btn waves-effect blue-light right" type="submit" name="action">GO!
+                    <i class="material-icons right">directions</i>
+                </button>
             </div>
         </div>
+
     </div>
-    <footer><h7>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h7></footer>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/javascript/index.js"></script>
-    <script src="assets/javascript/api.js"></script>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="transport-card card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Mode of Transportation</span>
+                        <form action="#">
+                            <label>
+                                <input class="mode" name="group1" type="radio" />
+                                <span><i class="mode-icon small material-icons">directions_walk</i></span>
+                            </label>
+                            <label>
+                                <input name="group1" type="radio" />
+                                <span><i class="mode-icon small material-icons">directions_bike</i></span>
+                            </label>
+                            <label>
+                                <input name="group1" type="radio" />
+                                <span><i class="mode-icon small material-icons">directions_car</i></span>
+                            </label>
+                            <label>
+                                <input name="group1" type="radio" />
+                                <span><i class="mode-icon small material-icons">directions_bus</i></span>
+                            </label>
+                            <label>
+                                <input name="group1" type="radio" />
+                                <span><i class="mode-icon small material-icons">directions_transit</i></span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6">
+            </div>
+            <div class="col s12 m6">
+                    <div class="transport-card card blue">
+                        <div class="card-content white-text">
+                            <span class="card-title">Weather<i class="small material-icons right">wb_sunny</i></span>
+                            <p>
+                                Input weather api's for "local" and "destination" here!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
 
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script src="./assets/javascript/index.js"></script>
 </body>
+
 </html>
