@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     function getWeather() {
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
-            city + "&appid=9017eb1defd779b9b948d111f75e9386";
+            city + "&units=imperial&appid=9017eb1defd779b9b948d111f75e9386";
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -33,15 +33,54 @@ $(document).ready(function () {
         })
     };
 
+    var startpoint = '200 N Dearborn Chicago';
 
-    //../routing/7.2/getroute.{format}?routeId=<ROUTEID>&<parameter>=<value>...
+    getLocation(startpoint);
 
-    // https://route.api.here.com/routing/7.2/calculateroute.xml
-    // ?app_id={YOUR_APP_ID}
-    // &app_code={YOUR_APP_CODE}
-    // &waypoint0=geo!52.5,13.4
-    // &waypoint1=geo!52.5,13.45
-    // &mode=fastest;car;traffic:disabled
+    function getLocation(startpoint) {
+        // var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
+        //     city + "&appid=9017eb1defd779b9b948d111f75e9386";
+    $.ajax({
+        url: 'https://geocoder.api.here.com/6.2/geocode.json',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'jsoncallback',
+        data: {
+          //searchtext: startpoint,
+          searchtext: startpoint,
+          app_id: 'wcU125hOha6uKl56A00d',
+        app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+          gen: '9'
+        },
+        success: function (data) {
+          alert(JSON.stringify(data));
+          console.log(data);
+        }
+      });
+      //console.log(data);
+    };
+
+
+    // geocode();
+
+    // function geocode(platform) {
+    //     var geocoder = platform.getGeocodingService(),
+    //       parameters = {
+    //         searchtext: '200 S Mathilda Sunnyvale CA',
+    //         gen: '9'};
+      
+    //     geocoder.geocode(parameters,
+    //       function (result) {
+    //         alert(result);
+    //       }, function (error) {
+    //         alert(error);
+    //       });
+
+    //       console.log(result);
+    //   }
+
+
+
 
     function calculateRouteFromAtoB(platform) {
         var router = platform.getRoutingService(),
