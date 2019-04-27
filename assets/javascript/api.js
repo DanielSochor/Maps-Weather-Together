@@ -60,28 +60,6 @@ $(document).ready(function () {
       //console.log(data);
     };
 
-
-    // geocode();
-
-    // function geocode(platform) {
-    //     var geocoder = platform.getGeocodingService(),
-    //       parameters = {
-    //         searchtext: '200 S Mathilda Sunnyvale CA',
-    //         gen: '9'};
-      
-    //     geocoder.geocode(parameters,
-    //       function (result) {
-    //         alert(result);
-    //       }, function (error) {
-    //         alert(error);
-    //       });
-
-    //       console.log(result);
-    //   }
-
-
-
-
     function calculateRouteFromAtoB(platform) {
         var router = platform.getRoutingService(),
             routeRequestParams = {
@@ -115,32 +93,7 @@ $(document).ready(function () {
         alert('Ooops!');
     }
 
-
-    // function addPolylineToMap(map, coordinateStart, coordinateEnd) {
-    //     var strip = new H.geo.Strip();
-
-    //     strip.pushPoint(coordinateStart);
-    //     strip.pushPoint(coordinateEnd);
-
-    //     map.addObject(new H.map.Polyline(
-    //         strip, {
-    //             style: {
-    //                 lineWidth: 4
-    //             }
-    //         }
-    //     ));
-
-    // }
-
-    // function moveMapTo(map, coordinateStart) {
-
-    //     map.setCenter(coordinateStart)
-    //     map.setZoom(14);
-    // }
-
-    /**
-     * Boilerplate map initialization code starts below:
-     */
+  //Boilerplate map initialization code starts below:
 
     var mapContainer = document.getElementById('map'),
         routeInstructionsContainer = document.getElementById('panel');
@@ -333,69 +286,5 @@ $(document).ready(function () {
     }
 
     calculateRouteFromAtoB(platform);
-
-
-    // Now use the map as required...
-
-
-    //$('head').append('<link rel="stylesheet" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" type="text/css" />');
-
-
-
-    // function geocode(platform) {
-    //     var geocoder = platform.getGeocodingService(),
-    //       geocodingParameters = {
-    //         searchText: '200 S Mathilda Sunnyvale CA',
-    //         jsonattributes : 1
-    //       };
-
-    //     geocoder.geocode(
-    //       geocodingParameters,
-    //       onSuccess,
-    //       onError
-    //     );
-    //   }
-
-    //   function onSuccess(result) {
-    //     var locations = result.response.view[0].result;
-    //     addLocationsToMap(locations);
-    //     addLocationsToPanel(locations);
-    // }
-
-    // function onError(error) {
-    //     alert('Ooops!');
-    //   }
-
-
-
-
-
-
-    // function getMap() {
-    //     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    //         textToSearchFor + "&api_key=AlyafWwXDhMSFvBu5VaS8eH3vslwmZ3z&limit=" + numberOfGifsToDisplay;
-    //     $.ajax({
-    //         url: queryURL,
-    //         method: "GET"
-    //     }).then(function (response) {
-    //         results = response.data;
-    //         console.log(response);
-    //         //     for (var i = 0; i < results.length; i++) {
-    //         //         var gifDiv = $("<div>");
-    //         //         var rating = results[i].rating;
-    //         //         var p = $("<p>").text("The GIF above has a rating of: " + rating);
-    //         //         var gifImage = $("<img>");
-    //         //         gifImage.attr("class", "gif");
-    //         //         gifImage.attr("data-state", "still");
-    //         //         gifImage.attr("data-to-do", i);
-    //         //         gifImage.attr("src", results[i].images.fixed_height_still.url);
-    //         //         gifDiv.prepend(p);
-    //         //         gifDiv.prepend(gifImage);
-    //         //         $("#gifs-appear-here").prepend(gifDiv);
-    //         // }
-    //     });
-    // }
-
-
 
 })
