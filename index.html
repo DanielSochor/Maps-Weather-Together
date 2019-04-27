@@ -22,7 +22,7 @@
     <!-- Navigation -->
     <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper" id="header">
                 <a href="#!" class="brand-logo center">Where Ya Going?</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="">Maps<i class="medium material-icons right">map</i></a></li>
@@ -41,7 +41,7 @@
             <!-- First input card for id a -->
 
             <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
+                <div class="card" id="from">
                     <div class="card-content white-text">
                         <span class="card-title"><i class="small material-icons left">location_on</i>From</span>
                         <form class="col s12">
@@ -76,7 +76,7 @@
 
                 <!-- Second input card with id b -->
 
-                <div class="card blue-grey darken-1">
+                <div class="card" id="to">
                     <div class="card-content white-text">
                         <span class="card-title"><i class="small material-icons left">location_on</i>To</span>
                         <form class="col s12">
@@ -114,29 +114,29 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
-                <div class="transport-card card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="transport-card card" id="mode">
+                    <div class="card-content black-text">
                         <span class="card-title">Mode of Transportation</span>
                         <form action="#">
                             <label>
                                 <input class="mode" name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons">directions_walk</i></span>
+                                <span><i class="mode-icon small material-icons black-text">directions_walk</i></span>
                             </label>
                             <label>
                                 <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons">directions_bike</i></span>
+                                <span><i class="mode-icon small material-icons black-text">directions_bike</i></span>
                             </label>
                             <label>
                                 <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons">directions_car</i></span>
+                                <span><i class="mode-icon small material-icons black-text">directions_car</i></span>
                             </label>
                             <label>
                                 <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons">directions_bus</i></span>
+                                <span><i class="mode-icon small material-icons black-text">directions_bus</i></span>
                             </label>
                             <label>
                                 <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons">directions_transit</i></span>
+                                <span><i class="mode-icon small material-icons black-text">directions_transit</i></span>
                             </label>
                         </form>
                     </div>
@@ -145,7 +145,7 @@
             <div class="col s12 m6">
             </div>
             <div class="col s12 m6">
-                    <div class="transport-card card blue">
+                    <div class="transport-card card" id="weather">
                         <div class="card-content white-text">
                             <span class="card-title">Weather<i class="small material-icons right">wb_sunny</i></span>
                             <p>

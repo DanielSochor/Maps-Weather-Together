@@ -1,3 +1,12 @@
+body {
+    background-image: url('../photos/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header {
+    background-color: #a6728a;
+}
 .card {
     width: 400px;
 }
@@ -24,5 +33,22 @@ i .large {
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 15px 30px;
+    margin: 15px 25px 30px;
+    background-color: #f2ba52;
 }
+#from {
+    background-color: #d97e7e;
+}
+
+#to {
+    background-color: #d97e7e;
+}
+
+#mode {
+    background-color: #f2ebc9;
+}
+
+#weather {
+    background-color: #55b3d9;
+}
+
