@@ -5,63 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>WhereYaGoin?</title>
 </head>
 <body>
-    <div class="container">
+        <div class="container.fluid" id="container">
+            <div class= "row">
+                <div class= "col-md-12" id= "header">
+                    <h5>Where Ya Goin?</h5>
+                </div>
         <div class="row">
-            <div class="col-md-12" id="header">
-                <h1>Where Ya Going?</h1>
-            </div>
-        </div>
-
-        
-            <div class="col-md-4">
-                <form id="inputs">
-                    <div class="form-group">
+            <div class= "col-md-12">
+                <div class= "row">
+                    <div class= "col-md-4" id= "inputsContainer">
+                        <form id="inputsform">
+                                <div class="form-group">
                                     <div class="form-group">
-                                      <label for="whereareYa">Where are ya?</label>
-                                      <input type="location" class="form-control" id="exampleInputLocal" placeholder="Your Location">
-                                      <small id="privacy" class="form-text text-muted">We won't stalk you</small>
+                                        <input type="location" class="form-control" id="exampleInputLocal" placeholder="Where are ya?">
                                     </div>
                                     <div class="form-group">
-                                      <label for="whereyaGoing">Where ya goin?</label>
-                                      <input type="location" class="form-control" id="exampleInputLocal" placeholder="Explore">
+                                        <input type="location" class="form-control" id="exampleInputLocal" placeholder="Where ya goin?">
                                     </div>
-                    <button type="submit" class="btn btn-primary" id="button">Submit</button>
-                </form>
-                    
-            </div>
-            </div>
-            <div class="col-md-8" id="modes">
-                    <div class= "row" id="transportation">
-                        <h3>Mode of Transportation</h3>
+                                    <button type="submit" class="btn btn-primary" id="button">
+                                        Submit
+                                    </button>
+                                </form>
                     </div>
-                    <div id= "output1"></div>
-                    <div class= "row" id="time">
-                        <h3>Time it takes</h3>
+                </div>
+            <div class= "row">
+                <div class= "col-md-8" id="results">
+                    <div class= "row">
+                        <div class= "col-md-3" id="modes">
+                            <h6>Mode of Transportation</h6>
+                            <div id= "output1"></div>
+                            </div>
+                        <div class="col-md-3" id="time">
+                            <h6>Time it takes</h6>
+                            <div id="output2"></div>
+                            </div>
                     </div>
-                    <div id="output2"></div>
+                </div>
             </div>
-            <div class= "col-md-12" id= "map">
-                    <div id="map" style="width: 600px; height: 400px; background: grey"></div>
+            <div class="row">
+                    <div class= "col-md-12" id= "map">
+                            <div id="map" style="width: 600px; height: 400px; background: grey"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
-    
-    <footer><h2>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h2></footer>
+    <footer><h7>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h7></footer>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
