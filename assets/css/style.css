@@ -34,7 +34,8 @@ i .large {
     right: 0;
     bottom: 0;
     margin: 15px 25px 30px;
-    background-color: #f2ba52;
+    background-color: #a6728a;
+    color: white;
 }
 #from {
     background-color: #d97e7e;
@@ -51,4 +52,13 @@ i .large {
 #weather {
     background-color: #55b3d9;
 }
-
+#map{
+    background-color: #55b3d9;
+}
+footer {
+    background-color: #f2ebc9;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+};
