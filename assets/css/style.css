@@ -11,6 +11,9 @@ input {
    color: white;
    background-color: none; 
 }
+i .large {
+    margin: 50px;
+}
 .mode-icon {
     color: white;
 }
