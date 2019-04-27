@@ -48,8 +48,8 @@ $(document).ready(function () {
             routeRequestParams = {
                 mode: 'fastest;publicTransport',
                 representation: 'display',
-                waypoint0: '52.5208,13.4093', // Fernsehturm
-                waypoint1: '52.5034,13.3280', // Kurfürstendamm
+                waypoint0: '41.85003,-87.65005', // Fernsehturm
+                waypoint1: '41.7948,-87.5917', // Kurfürstendamm
                 routeattributes: 'waypoints,summary,shape,legs',
                 maneuverattributes: 'direction,action'
             };
@@ -62,6 +62,7 @@ $(document).ready(function () {
     }
 
     function onSuccess(result) {
+        console.log(result);
         var route = result.response.route[0];
         addRouteShapeToMap(route);
         addManueversToMap(route);
@@ -107,8 +108,8 @@ $(document).ready(function () {
 
     //Step 1: initialize communication with the platform
     var platform = new H.service.Platform({
-        app_id: 'devportal-demo-20180625',
-        app_code: '9v2BkviRwi9Ot26kp2IysQ',
+        app_id: 'wcU125hOha6uKl56A00d',
+        app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
 //         app_id: 'DemoAppId01082013GAL',
 //   app_code: 'AJKnXv84fjrb0KIHawS0Tg',
         useCIT: true,
@@ -169,7 +170,7 @@ $(document).ready(function () {
             //lineString.pushLatLngAlt(parts[0], parts[1]);
         });
 
-        polyline = new H.map.Polyline(lineString, {
+        polyline = new H.map.Polyline(strip, {
             style: {
                 lineWidth: 4,
                 strokeColor: 'rgba(0, 128, 255, 0.7)'
