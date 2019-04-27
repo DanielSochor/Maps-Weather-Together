@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    //id="WhereAreYa"  startpoint
+    //id="whereYaGoing" endPoint
+
     var city = "Chicago";
 
     getWeather();
