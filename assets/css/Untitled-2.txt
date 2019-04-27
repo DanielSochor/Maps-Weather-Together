@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../photos/background.jpg");
+    font-family:"Lucida Grande",Tahoma,sans-serif;
+    color: rgb(102, 102, 102);
+    font-size: 80%; 
+    background-attachment: fixed;
+}
+#container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    background: inherit;
+}
+#container{
+    background: inherit;
+}
+#header {
+    width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    background-color: #a6a6a6;
+    color: #262626;
+}
+
+#modes {
+    background-color: #a6a6a6;
+    float: left;
+}
+#inputs {
+    color: white;
+    background-color: #a6a6a6;
+    float: left;
+    color: white;
+    background-color: #a6a6a6;
+    padding: 15px;
+}
+#button{
+    background-color: #0d0d0d;
+}
+#map{
+    float: left;
+}
+#button{
+    background-color: #0d0d0d;
+}
+#triptime{
+    float: left;
+}
+
+  b, strong {
+    color: black;
+  }
+  code {
+    font-weight: 700;
+    font-size: 120%;
+  }
+
+footer {
+    background-color: #a6a6a6;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+};
