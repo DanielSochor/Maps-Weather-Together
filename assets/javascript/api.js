@@ -4,7 +4,7 @@ $(document).ready(function () {
     //id="whereYaGoing" endPoint
 
     var city = "Chicago";
-    
+
 
     getWeather();
 
