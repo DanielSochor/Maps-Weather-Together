@@ -15,7 +15,7 @@ $(document).ready(function () {
     console.log(toCity);
     //weather at desitination is given
     getWeather(toCity);
-    getLocation(fromAddressString, toAddressString);
+    getLatAndLongForToAndFrom(fromAddressString, toAddressString);
   });
 
 });

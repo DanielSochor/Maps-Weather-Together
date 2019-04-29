@@ -1,9 +1,10 @@
 //$(document).ready(function () {
 
-function getLocation(from, to) {
-    var destinationArray = [from, to];
+function getLatAndLongForToAndFrom(from, to) {
+    var addressArray = [from, to];
+    var latAndLongArray = [];
 
-    for (var i = 0; i < destinationArray.length; i++) {
+    for (var i = 0; i < addressArray.length; i++) {
 
         $.ajax({
             url: 'https://geocoder.api.here.com/6.2/geocode.json',
@@ -12,7 +13,7 @@ function getLocation(from, to) {
             jsonp: 'jsoncallback',
             data: {
                 //searchtext: startpoint,
-                searchtext: destinationArray[i],
+                searchtext: addressArray[i],
                 app_id: 'wcU125hOha6uKl56A00d',
                 app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
                 gen: '9'
@@ -20,11 +21,13 @@ function getLocation(from, to) {
             success: function (data) {
                 //alert(JSON.stringify(data));
                 var lat = data.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+                latAndLongArray.push(lat);
                 var long = data.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-                console.log(lat,long);
+                latAndLongArray.push(long);
             }
         });
     }
+    console.log(latAndLongArray);
 };
 
 function calculateRouteFromAtoB(platform) {
