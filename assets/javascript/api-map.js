@@ -21,22 +21,31 @@ function getLatAndLongForToAndFrom(from, to) {
             success: function (data) {
                 //alert(JSON.stringify(data));
                 var lat = data.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+                lat = lat.toString();
                 latAndLongArray.push(lat);
                 var long = data.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+                long = long.toString();
                 latAndLongArray.push(long);
             }
         });
     }
     console.log(latAndLongArray);
+    //calculateRouteFromAtoB(platform,latAndLongArray);
 };
 
-function calculateRouteFromAtoB(platform) {
-    var router = platform.getRoutingService(),
+function calculateRouteFromAtoB(platform,latAndLongArray) {
+    var router = platform.getRoutingService();
+    var way0 = latAndLongArray[0] + "," + latAndLongArray[1];
+    var way1 = latAndLongArray[2] + "," + latAndLongArray[3];
+    console.log(way0,way1);
+
         routeRequestParams = {
             mode: 'fastest;publicTransport',
             representation: 'display',
-            waypoint0: '41.85003,-87.65005', // Fernsehturm
-            waypoint1: '41.7948,-87.5917', // Kurfürstendamm
+            waypoint0: way0,
+            waypoint1: way1,
+            //waypoint0: '41.85003,-87.65005', // Fernsehturm
+            //waypoint1: '41.7948,-87.5917', // Kurfürstendamm
             routeattributes: 'waypoints,summary,shape,legs',
             maneuverattributes: 'direction,action'
         };
@@ -255,6 +264,6 @@ Number.prototype.toMMSS = function () {
     return Math.floor(this / 60) + ' minutes ' + (this % 60) + ' seconds.';
 }
 
-calculateRouteFromAtoB(platform);
+//calculateRouteFromAtoB(platform);
 
 //})
