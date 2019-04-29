@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    //This is the latest file
+
     //id="WhereAreYa"  startpoint
     //id="whereYaGoing" endPoint
 
@@ -54,7 +56,7 @@ $(document).ready(function () {
           gen: '9'
         },
         success: function (data) {
-          alert(JSON.stringify(data));
+          //alert(JSON.stringify(data));
           console.log(data);
         }
       });
