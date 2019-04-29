@@ -1,9 +1,18 @@
+//This is the latest file
+
 $(document).ready(function () {
 
-    //This is the latest file
+    $(document).on("click", "#submit-button", function () {
+        console.log("submit-button");
 
-    //id="WhereAreYa"  startpoint
-    //id="whereYaGoing" endPoint
+
+    });
+
+    
+
+
+
+
 
     var city = "Chicago";
     
