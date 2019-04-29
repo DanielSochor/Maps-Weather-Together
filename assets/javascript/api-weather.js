@@ -1,4 +1,4 @@
-$(document).ready(function () {
+//$(document).ready(function () {
 
     function getWeather(city) {
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -26,4 +26,4 @@ $(document).ready(function () {
         })
     };
 
-})
+//})

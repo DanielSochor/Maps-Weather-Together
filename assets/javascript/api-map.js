@@ -1,4 +1,4 @@
-$(document).ready(function () {
+//$(document).ready(function () {
 
     function getLocation(from,to) {
         // var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -250,4 +250,4 @@ $(document).ready(function () {
 
     calculateRouteFromAtoB(platform);
 
-})
+//})
