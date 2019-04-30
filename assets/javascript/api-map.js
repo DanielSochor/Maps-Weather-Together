@@ -37,7 +37,6 @@ function getLatAndLongForToAndFrom(from, to) {
         long = long.toString();
         console.log(lat, long);
         console.log(result);
-
     });
 
     //calculateRouteFromAtoB(platform, latAndLongArray);
