@@ -41,24 +41,26 @@ $(document).ready(function () {
     function getLocation(startpoint) {
         // var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
         //     city + "&appid=9017eb1defd779b9b948d111f75e9386";
-    $.ajax({
-        url: 'https://geocoder.api.here.com/6.2/geocode.json',
-        type: 'GET',
-        dataType: 'jsonp',
-        jsonp: 'jsoncallback',
-        data: {
-          //searchtext: startpoint,
-          searchtext: startpoint,
-          app_id: 'wcU125hOha6uKl56A00d',
-        app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
-          gen: '9'
-        },
-        success: function (data) {
-          alert(JSON.stringify(data));
-          console.log(data);
-        }
-      });
-      //console.log(data);
+        $.ajax({
+            url: 'https://geocoder.api.here.com/6.2/geocode.json',
+            type: 'GET',
+            dataType: 'jsonp',
+            jsonp: 'jsoncallback',
+            data: {
+                //searchtext: startpoint,
+                searchtext: startpoint,
+                app_id: 'wcU125hOha6uKl56A00d',
+                app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+                gen: '9'
+            },
+            success: function (data) {
+                alert(JSON.stringify(data));
+                console.log(data);
+                var lat = data.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+                var long = data.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+            }
+        });
+        //console.log(data);
     };
 
     function calculateRouteFromAtoB(platform) {
@@ -71,7 +73,7 @@ $(document).ready(function () {
                 routeattributes: 'waypoints,summary,shape,legs',
                 maneuverattributes: 'direction,action'
             };
-            console.log(router);
+        console.log(router);
         router.calculateRoute(
             routeRequestParams,
             onSuccess,
@@ -94,7 +96,7 @@ $(document).ready(function () {
         alert('Ooops!');
     }
 
-  //Boilerplate map initialization code starts below:
+    //Boilerplate map initialization code starts below:
 
     var mapContainer = document.getElementById('map'),
         routeInstructionsContainer = document.getElementById('panel');
@@ -103,8 +105,8 @@ $(document).ready(function () {
     var platform = new H.service.Platform({
         app_id: 'wcU125hOha6uKl56A00d',
         app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
-//         app_id: 'DemoAppId01082013GAL',
-//   app_code: 'AJKnXv84fjrb0KIHawS0Tg',
+        //         app_id: 'DemoAppId01082013GAL',
+        //   app_code: 'AJKnXv84fjrb0KIHawS0Tg',
         useCIT: true,
         useHTTPS: true
     });
@@ -201,8 +203,8 @@ $(document).ready(function () {
                     lat: maneuver.position.latitude,
                     lng: maneuver.position.longitude
                 }, {
-                    icon: dotIcon
-                });
+                        icon: dotIcon
+                    });
                 marker.instruction = maneuver.instruction;
                 group.addObject(marker);
             }
