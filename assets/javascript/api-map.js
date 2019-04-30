@@ -3,52 +3,73 @@
 function getLatAndLongForToAndFrom(from, to) {
     var addressArray = [from, to];
     var latAndLongArray = [];
+    var waypoint0 = [];
+    var waypoint1 = [];
+    var data;
 
-    for (var i = 0; i < addressArray.length; i++) {
+    response = doAjax(addressArray);
 
-        $.ajax({
-            url: 'https://geocoder.api.here.com/6.2/geocode.json',
-            type: 'GET',
-            dataType: 'jsonp',
-            jsonp: 'jsoncallback',
-            data: {
-                //searchtext: startpoint,
-                searchtext: addressArray[i],
-                app_id: 'wcU125hOha6uKl56A00d',
-                app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
-                gen: '9'
-            },
-            success: function (data) {
-                //alert(JSON.stringify(data));
-                var lat = data.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
-                lat = lat.toString();
-                latAndLongArray.push(lat);
-                var long = data.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-                long = long.toString();
-                latAndLongArray.push(long);
-            }
-        });
+    async function doAjax(addressArray) {
+        for (var i = 0; i < addressArray.length; i++) {
+
+            const result = await $.ajax({
+                url: 'https://geocoder.api.here.com/6.2/geocode.json',
+                type: 'GET',
+                dataType: 'jsonp',
+                jsonp: 'jsoncallback',
+                data: {
+                    //searchtext: startpoint,
+                    searchtext: addressArray[i],
+                    app_id: 'wcU125hOha6uKl56A00d',
+                    app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+                    gen: '9'
+                },
+                // success: function (data) {
+                //     //alert(JSON.stringify(data));
+                //     var lat = data.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+                //     //lat = lat.toString();
+                //     latAndLongArray.push(lat);
+                //     var long = data.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+                //     //long = long.toString();
+                //     latAndLongArray.push(long);
+                //     console.log("lat is: " + lat + "long is: " + long);
+                //     //waypoint[0].push(lat,long);
+                //     data = data;
+                // }
+            });
+
+            return result;
+        }
+
+        // console.log("data is: " + data);
+        // console.log("lat long array is: " + latAndLongArray);
     }
-    console.log(latAndLongArray);
-    //calculateRouteFromAtoB(platform,latAndLongArray);
+
+    //var lat = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+    //var long = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+    //console.log(lat,long);
+    console.log(response);
+
+    // console.log("lat and long array is: " + latAndLongArray);
+    // //calculateRouteFromAtoB(platform,latAndLongArray);
 };
 
-function calculateRouteFromAtoB(platform,latAndLongArray) {
+function calculateRouteFromAtoB(platform, latAndLongArray) {
     var router = platform.getRoutingService();
     var way0 = latAndLongArray[0] + "," + latAndLongArray[1];
     var way1 = latAndLongArray[2] + "," + latAndLongArray[3];
-    console.log(way0,way1);
+    console.log(way0, way1);
 
-        routeRequestParams = {
-            mode: 'fastest;publicTransport',
-            representation: 'display',
-            waypoint0: way0,
-            waypoint1: way1,
-            //waypoint0: '41.85003,-87.65005', // Fernsehturm
-            //waypoint1: '41.7948,-87.5917', // Kurfürstendamm
-            routeattributes: 'waypoints,summary,shape,legs',
-            maneuverattributes: 'direction,action'
-        };
+    routeRequestParams = {
+        mode: 'fastest;publicTransport',
+        representation: 'display',
+        waypoint0: way0,
+        waypoint1: way1,
+        //waypoint0: '41.85003,-87.65005', // Fernsehturm
+        //waypoint1: '41.7948,-87.5917', // Kurfürstendamm
+        routeattributes: 'waypoints,summary,shape,legs',
+        maneuverattributes: 'direction,action'
+    };
     console.log(router);
     router.calculateRoute(
         routeRequestParams,
