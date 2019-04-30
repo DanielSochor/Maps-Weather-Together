@@ -7,48 +7,73 @@ function getLatAndLongForToAndFrom(from, to) {
     var waypoint1 = [];
     var data;
 
-    response = doAjax(addressArray);
 
-    async function doAjax(addressArray) {
-        for (var i = 0; i < addressArray.length; i++) {
 
-            const result = await $.ajax({
-                url: 'https://geocoder.api.here.com/6.2/geocode.json',
-                type: 'GET',
-                dataType: 'jsonp',
-                jsonp: 'jsoncallback',
-                data: {
-                    //searchtext: startpoint,
-                    searchtext: addressArray[i],
-                    app_id: 'wcU125hOha6uKl56A00d',
-                    app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
-                    gen: '9'
-                },
-                // success: function (data) {
-                //     //alert(JSON.stringify(data));
-                //     var lat = data.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
-                //     //lat = lat.toString();
-                //     latAndLongArray.push(lat);
-                //     var long = data.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-                //     //long = long.toString();
-                //     latAndLongArray.push(long);
-                //     console.log("lat is: " + lat + "long is: " + long);
-                //     //waypoint[0].push(lat,long);
-                //     data = data;
-                // }
-            });
-
-            return result;
+    var jqDeffered = $.ajax({
+        url: 'https://geocoder.api.here.com/6.2/geocode.json',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'jsoncallback',
+        data: {
+            //searchtext: startpoint,
+            searchtext: '100 South Wacker Drive Chicago IL',
+            app_id: 'wcU125hOha6uKl56A00d',
+            app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+            gen: '9'
         }
+    });
 
-        // console.log("data is: " + data);
-        // console.log("lat long array is: " + latAndLongArray);
-    }
+    jqDeffered.then(function (response) {
+        console.log(response.Response.View[0].Result[0].Location.DisplayPosition);
+    });
 
-    //var lat = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
-    //var long = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-    //console.log(lat,long);
-    console.log(response);
+
+
+    // response = doAjax(addressArray);
+
+    // async function doAjax(addressArray) {
+    //     for (var i = 0; i < addressArray.length; i++) {
+
+    //         result = await $.ajax({
+    //             url: 'https://geocoder.api.here.com/6.2/geocode.json',
+    //             type: 'GET',
+    //             dataType: 'jsonp',
+    //             jsonp: 'jsoncallback',
+    //             data: {
+    //                 //searchtext: startpoint,
+    //                 searchtext: addressArray[i],
+    //                 app_id: 'wcU125hOha6uKl56A00d',
+    //                 app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+    //                 gen: '9'
+    //             },
+    //             // success: function (data) {
+    //             // //     //alert(JSON.stringify(data));
+    //             // //     var lat = data.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+    //             // //     //lat = lat.toString();
+    //             // //     latAndLongArray.push(lat);
+    //             // //     var long = data.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+    //             // //     //long = long.toString();
+    //             // //     latAndLongArray.push(long);
+    //             // //     console.log("lat is: " + lat + "long is: " + long);
+    //             // //     //waypoint[0].push(lat,long);
+    //             // //     data = data;
+    //             // return result;
+    //             // }
+    //         });
+
+    //         return result;
+    //     }
+
+    //     // console.log("data is: " + data);
+    //     // console.log("lat long array is: " + latAndLongArray);
+    // }
+
+    // //var lat = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+    // //var long = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+    // //console.log(lat,long);
+
+    //     console.log(response);
+
 
     // console.log("lat and long array is: " + latAndLongArray);
     // //calculateRouteFromAtoB(platform,latAndLongArray);
