@@ -11,12 +11,11 @@ $(document).ready(function () {
     var toZipCode = $("#b-zip").val();
     var fromAddressString = fromStreet + " " + fromCity + " " + fromState + " " + fromZipCode;
     var toAddressString = toStreet + " " + toCity + " " + toState + " " + toZipCode;
+    var coordinate;
 
-    console.log(toCity);
     //weather at desitination is given
+    getWeather(fromCity);
     getWeather(toCity);
-    var test = getLatAndLongForToAndFrom(fromAddressString, toAddressString);
-    doesThisWork(test);
+    getLatAndLongForToAndFrom(fromAddressString, toAddressString);
   });
-
 });
