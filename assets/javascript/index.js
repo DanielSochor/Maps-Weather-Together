@@ -12,7 +12,6 @@ $(document).ready(function () {
     var fromAddressString = fromStreet + " " + fromCity + " " + fromState + " " + fromZipCode;
     var toAddressString = toStreet + " " + toCity + " " + toState + " " + toZipCode;
 
-    //weather at desitination is given
     getWeather(fromCity);
     getWeather(toCity);
     getLatAndLongForToAndFrom(fromAddressString, toAddressString);
