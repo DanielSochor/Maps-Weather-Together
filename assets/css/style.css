@@ -6,6 +6,7 @@ body {
 
 #header {
     background-color: #a6728a;
+    font-family: Georgia;
 }
 .card {
     width: 400px;
@@ -54,6 +55,8 @@ i .large {
 }
 #map{
     background-color: #55b3d9;
+    margin-top: 25px;
+    margin-left: 16px;
 }
 footer {
     background-color: #f2ebc9;
