@@ -6,5 +6,6 @@ function getWeather(city) {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+
     })
 };

@@ -26,10 +26,6 @@
         <nav>
             <div class="nav-wrapper" id="header">
                 <a href="#!" class="brand-logo center">Where Ya Going?</a>
-                <!-- <ul class="right hide-on-med-and-down">
-                    <li><a href="">Maps<i class="medium material-icons right">map</i></a></li>
-                    <li><a href="">Weather<i class="medium material-icons right">wb_sunny</i></a></li>
-                </ul> -->
             </div>
         </nav>
     </div>
@@ -71,45 +67,40 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col s12 m6 valign-wrapper center-align">
-                <i class="large material-icons">more_horiz</i>
-            </div>
-            <div class="col l6"> -->
-
-                <!-- Second input card with id b -->
-
-                <div class="card" id="to">
-                    <div class="card-content white-text">
-                        <span class="card-title"><i class="small material-icons left">location_on</i>To</span>
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input placeholder="Street" id="b-street" type="text" class="validate">
-                                    <label for="street-address"></label>
-                                </div>
+            <div class="card" id="to">
+                <div class="card-content white-text">
+                    <span class="card-title"><i class="small material-icons left">location_on</i>To</span>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Street" id="b-street" type="text" class="validate">
+                                <label for="street-address"></label>
                             </div>
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <input placeholder="City" id="b-city" type="text" class="validate">
-                                    <label for="city"></label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <input placeholder="State" id="b-state" type="text" class="validate">
-                                    <label for="state"></label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <input placeholder="Zip Code" id="b-zip" type="text" class="validate">
-                                    <label for="zip_code"></label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="City" id="b-city" type="text" class="validate">
+                                <label for="city"></label>
                             </div>
-                        </form>
-                    </div>
+                            <div class="input-field col s12">
+                                <input placeholder="State" id="b-state" type="text" class="validate">
+                                <label for="state"></label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input placeholder="Zip Code" id="b-zip" type="text" class="validate">
+                                <label for="zip_code"></label>
+                            </div>
+                            <button id="submit-button" class="btn waves-effect blue-light right" type="submit"
+                                name="action">GO!
+                                <i class="material-icons right">directions</i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <button id="submit-button" class="btn waves-effect blue-light right" type="submit" name="action">GO!
-                    <i class="material-icons right">directions</i>
-                </button>
             </div>
+
         </div>
+    </div>
 
     </div>
 
@@ -118,29 +109,10 @@
             <div class="col s12 m6">
                 <div class="transport-card card" id="mode">
                     <div class="card-content black-text">
-                        <span class="card-title">Mode of Transportation</span>
-                        <form action="#">
-                            <label>
-                                <input class="mode" name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_walk</i></span>
-                            </label>
-                            <label>
-                                <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_bike</i></span>
-                            </label>
-                            <label>
-                                <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_car</i></span>
-                            </label>
-                            <label>
-                                <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_bus</i></span>
-                            </label>
-                            <label>
-                                <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_transit</i></span>
-                            </label>
-                        </form>
+                        <span class="card-title">Weather: local<i class="small material-icons right">wb_sunny</i></span>
+                        <p>
+                            Input weather api's for "local" here!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -149,9 +121,10 @@
             <div class="col s12 m6">
                 <div class="transport-card card" id="weather">
                     <div class="card-content white-text">
-                        <span class="card-title">Weather<i class="small material-icons right">wb_sunny</i></span>
+                        <span class="card-title">Weather: destination<i
+                                class="small material-icons right">wb_sunny</i></span>
                         <p>
-                            Input weather api's for "local" and "destination" here!
+                            Input weather api's for "destination" here!
                         </p>
                     </div>
                 </div>
@@ -161,17 +134,26 @@
                     <div id="map" style="width: 600px; height: 400px;"></div>
                 </div>
                 <div class="col s12 m6">
-                    <div id="panel">
-
+                    <div class="transport-card card" id="directions">
+                        <div class="card-content black-text">
+                            <span class="card-title">Directions<i
+                                    class="small material-icons right">directions</i></span>
+                            <div id="panel">
+                                <p>directions go here</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
-</div>
-<footer><h7>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h7></footer>
-<script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
+    </div>
+    </div>
+    <footer>
+        <h7>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h7>
+    </footer>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
@@ -182,6 +164,7 @@
     <script src="assets/javascript/api-public-transit.js"></script>
     <script src="assets/javascript/api-lat-long.js"></script>
     <script src="assets/javascript/api-weather.js"></script>
+<<<<<<< Updated upstream
     <script src="assets/javascript/index.js"></script>
 
 
@@ -198,6 +181,9 @@
         <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
         <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
         <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script> -->
+=======
+    <script src="assets/javascript/api-map.js"></script>
+>>>>>>> Stashed changes
 </body>
 
 </html>
