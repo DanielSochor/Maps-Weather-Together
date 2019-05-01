@@ -11,7 +11,6 @@ $(document).ready(function () {
     var toZipCode = $("#b-zip").val();
     var fromAddressString = fromStreet + " " + fromCity + " " + fromState + " " + fromZipCode;
     var toAddressString = toStreet + " " + toCity + " " + toState + " " + toZipCode;
-    var coordinate;
 
     //weather at desitination is given
     getWeather(fromCity);
