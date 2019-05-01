@@ -5,21 +5,6 @@ function getWeather(city) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        //results = response.data;
         console.log(response);
-        // lat = parseFloat(response.coord.lat);
-        // lon = parseFloat(response.coord.lon);
-
-        // var coordinateStart = {
-        //     lat: lat,
-        //     lng: lon
-        // }
-        // var coordinateEnd = {
-        //     lat: 39.76838,
-        //     lng: -86.15084
-        // }
-
-        // moveMapTo(map, coordinateStart);
-        // addPolylineToMap(map, coordinateStart, coordinateEnd);
     })
 };
