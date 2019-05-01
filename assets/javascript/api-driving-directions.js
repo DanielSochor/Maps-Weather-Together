@@ -22,21 +22,20 @@ function calculateRouteFromAtoBDriving (platform,waypoint0,waypoint1) {
    *
    * see: http://developer.here.com/rest-apis/documentation/routing/topics/resource-type-calculate-route.html
    */
-  function onSuccess(result) {
-    var route = result.response.route[0];
+  //function onSuccess(result) {
+    //var route = result.response.route[0];
    /*
     * The styling of the route response on the map is entirely under the developer's control.
     * A representitive styling can be found the full JS + HTML code of this example
     * in the functions below:
     */
-    addRouteShapeToMap(route);
-    addManueversToMap(route);
-  
-    addWaypointsToPanel(route.waypoint);
-    addManueversToPanel(route);
-    addSummaryToPanel(route.summary);
+   //addRouteShapeToMap(route);
+    //addManueversToMap(route);
+    //addWaypointsToPanel(route.waypoint);
+    //addManueversToPanel(route);
+    //addSummaryToPanel(route.summary);
     // ... etc.
-  }
+  //}
   
   /**
    * This function will be called if a communication error occurs during the JSON-P request
@@ -46,16 +45,13 @@ function calculateRouteFromAtoBDriving (platform,waypoint0,waypoint1) {
     alert('Ooops!');
   }
   
-  
-  
-  
   /**
    * Boilerplate map initialization code starts below:
    */
   
   // set up containers for the map  + panel
-  var mapContainer = document.getElementById('map'),
-    routeInstructionsContainer = document.getElementById('panel');
+  //var mapContainer = document.getElementById('map'),
+    //routeInstructionsContainer = document.getElementById('panel');
   
   //Step 1: initialize communication with the platform
   var platform = new H.service.Platform({
@@ -258,7 +254,7 @@ function calculateRouteFromAtoBDriving (platform,waypoint0,waypoint1) {
   }
   
   // Now use the map as required...
-  calculateRouteFromAtoB (platform);
+  //calculateRouteFromAtoB (platform);
   
-  $('head').append('<link rel="stylesheet" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" type="text/css" />');
+  //$('head').append('<link rel="stylesheet" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" type="text/css" />');
   
