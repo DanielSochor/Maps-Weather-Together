@@ -14,10 +14,10 @@ body {
 .transport-card {
     width: 400px;
 }
-#directions {
+#page {
     margin-top: 50px;
 }
-input {
+#input {
    color: white;
    background-color: none; 
 }
@@ -223,8 +223,11 @@ code, h1, h2, h3{
   .directions li span.leave  {
     background-position:-1540px;
   }
-#panel{
+#directions{
     background-color: #55b3d9;
+    margin-top: 25px;
+    margin-left: 16px;
+    padding: 25px;
 }
 footer {
     background-color: #f2ebc9;

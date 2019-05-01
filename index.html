@@ -25,7 +25,7 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper" id="header">
-                <a href="#!" class="brand-logo center">Where Ya Going?</a>
+                <a>Where Ya Going?</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="">Maps<i class="medium material-icons right">map</i></a></li>
                     <li><a href="">Weather<i class="medium material-icons right">wb_sunny</i></a></li>
@@ -34,7 +34,7 @@
         </nav>
     </div>
 
-    <div class="container" id="directions">
+    <div class="container" id="page">
 
         <!-- Row with address input cards -->
 
@@ -149,10 +149,16 @@
             <div class="col s12 m6">
                 <div class="transport-card card" id="weather">
                     <div class="card-content white-text">
-                        <span class="card-title">Weather<i class="small material-icons right">wb_sunny</i></span>
-                        <p>
-                            Input weather api's for "local" and "destination" here!
-                        </p>
+                        <span class="card-title">Weather<i class="small material-icons right" id= "icon"></i></span>
+                            <p id="maxTemp">
+
+                            </p>
+                            <p id="minTemp">
+                            </p>
+                            <p id="day">
+                            </p>
+                            <p id= "night">
+                            </p>
                     </div>
                 </div>
             </div>
@@ -160,8 +166,9 @@
                 <div class="col s12 m6">
                     <div id="map" style="width: 600px; height: 400px;"></div>
                 </div>
+                
                 <div class="col s12 m6">
-                    <div id="panel">
+                    <div id="directions" style= "width: 600px; height: 300px;">
                         
                     </div>
                 </div>
@@ -175,6 +182,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script type="text/javascript" src="materialize/js/materialize.js"></script>
         <script src="./assets/javascript/index.js"></script>
+        <script src="./assets/javascript/api-map.js"></script>
+        <script src="./assets/javascript/api-weather.js"></script>
         <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
         <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
         <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>

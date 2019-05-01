@@ -20,6 +20,19 @@
                 lat: 39.76838,
                 lng: -86.15084
             }
+            if(response.weather[0].main === "Rain"){
+                $("#icon").append("filter_drama")
+            }
+            else if(response.weather[0].main=== "Clear"){
+                $("#icon").append("wb_sunny")
+            }
+            else{
+                $("#icon").append("flash_on")
+            };
+            $("#maxTemp").append("Max Temp: " + response.main.temp_max + " F");
+            $("#minTemp").append("Min Temp: " + response.main.temp_min + " F");
+            $("#day").append("Day Forecast: " + response.weather[0].main);
+            $("#night").append("Night Forecast: " + response.weather[1].main);
 
             moveMapTo(map, coordinateStart);
             addPolylineToMap(map, coordinateStart, coordinateEnd);
