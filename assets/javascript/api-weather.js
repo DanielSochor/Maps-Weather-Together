@@ -20,10 +20,16 @@
                 lat: 39.76838,
                 lng: -86.15084
             }
+            var highTemp = response.main.temp.max-temp;
+            var lowTemp = response.main.temp.low-temp;
+            var midTemp = response.main.temp
 
+            $("max-temp").append(highTemp);
+            $("lowTemp").append(lowTemp);
+            
             moveMapTo(map, coordinateStart);
             addPolylineToMap(map, coordinateStart, coordinateEnd);
         })
     };
 
-//})
+// })
