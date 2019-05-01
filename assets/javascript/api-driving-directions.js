@@ -1,4 +1,4 @@
-function calculateRouteFromAtoB (platform) {
+function calculateRouteFromAtoBDriving (platform,waypoint0,waypoint1) {
     var router = platform.getRoutingService(),
       routeRequestParams = {
         mode: 'fastest;car',
