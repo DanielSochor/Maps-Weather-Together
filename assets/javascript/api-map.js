@@ -1,91 +1,156 @@
 //$(document).ready(function () {
 
+
+function getLatAndLong(location){
+    var coordinates;
+    return $.ajax({
+        url: 'https://geocoder.api.here.com/6.2/geocode.json',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: 'jsoncallback',
+        data: {
+            searchtext: location,
+            app_id: 'wcU125hOha6uKl56A00d',
+            app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+            gen: '9'
+        }
+    });
+}
+
 function getLatAndLongForToAndFrom(from, to) {
     var addressArray = [from, to];
-    var latAndLongArray = [];
-    var waypoint0 = [];
-    var waypoint1 = [];
-    var dataA = '';
-
-    var from = "100 South Wacker Drive Chicago IL";
-
-    async function doAjax(from) {
-
-        const result = await $.ajax({
-            url: 'https://geocoder.api.here.com/6.2/geocode.json',
-            type: 'GET',
-            dataType: 'jsonp',
-            jsonp: 'jsoncallback',
-            data: {
-                searchtext: from,
-                app_id: 'wcU125hOha6uKl56A00d',
-                app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
-                gen: '9'
-            },
-            //async: false,
-            complete: function (data) {
-                //dataA = data;
-            }
-        });
-        return result;
-    }
-
-    doAjax(from).then(function (result) {
-        var lat = result.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
-        var long = result.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-        lat = lat.toString();
-        long = long.toString();
-        console.log(lat, long);
-        console.log(result);
-    });
-
-    //calculateRouteFromAtoB(platform, latAndLongArray);
-
-    console.log("data is: " + dataA)
-
+    var coordinates = []
     for (var i = 0; i < addressArray.length; i++) {
-        var jqDeffered = $.ajax({
-            url: 'https://geocoder.api.here.com/6.2/geocode.json',
-            type: 'GET',
-            dataType: 'jsonp',
-            jsonp: 'jsoncallback',
-            data: {
-                searchtext: addressArray[i],
-                app_id: 'wcU125hOha6uKl56A00d',
-                app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
-                gen: '9'
-            }
-        });
-
-        jqDeffered.then(function (response) {
-            //console.log(response);
+        var address = addressArray[i];
+        getLatAndLong(address).then(function (response) {
             var lat = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
             var long = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-            lat = lat.toString();
-            long = long.toString();
-            //console.log(lat, long);
-            latAndLongArray.push(lat, long);
+            coordinates.push(lat.toString() + "," + long.toString());
         });
-
-        //console.log("response" + response);
     }
-
-
-
-
-    //console.log("lat and long array is: "+latAndLongArray);
-    //waypoint0 = toString(latAndLongArray[0]);
-    //console.log("way point 0 is: " + waypoint0);
-
-    //calculateRouteFromAtoB(platform, latAndLongArray);
-
+    return coordinates;
 };
+
+function doesThisWork(test){
+    console.log(test);
+}
+
+
+
+
+
+
+
+// var from = "100 South Wacker Drive Chicago IL"
+// var to = "1749 North Wells Street Chicago IL"
+
+// getLatAndLongForToAndFrom(from,to);
+
+
+// function getLatAndLongForToAndFrom(from, to) {
+
+//     $.ajax({
+//         url: 'https://geocoder.api.here.com/6.2/geocode.json',
+//         type: 'GET',
+//         dataType: 'jsonp',
+//         jsonp: 'jsoncallback',
+//         data: {
+//             searchtext: from,
+//             app_id: 'wcU125hOha6uKl56A00d',
+//             app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+//             gen: '9'
+//         }
+//     }).then(function (response) {
+//         var lat = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+//         var long = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+//         lat = lat.toString();
+//         long = long.toString();
+//     });
+
+
+
+
+
+
+
+
+
+//     var addressArray = [from, to];
+//     var latAndLongArray = [];
+//     var waypoint0 = [];
+//     var waypoint1 = [];
+//     var dataA = '';
+
+//     var from = "100 South Wacker Drive Chicago IL";
+
+//     async function doAjax(from) {
+
+//         const result = await $.ajax({
+//             url: 'https://geocoder.api.here.com/6.2/geocode.json',
+//             type: 'GET',
+//             dataType: 'jsonp',
+//             jsonp: 'jsoncallback',
+//             data: {
+//                 searchtext: from,
+//                 app_id: 'wcU125hOha6uKl56A00d',
+//                 app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+//                 gen: '9'
+//             },
+//             //async: false,
+//             complete: function (data) {
+//                 //dataA = data;
+//             }
+//         });
+//         return result;
+//     }
+
+//     doAjax(from).then(function (result) {
+//         var lat = result.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+//         var long = result.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+//         lat = lat.toString();
+//         long = long.toString();
+//     });
+
+//     //calculateRouteFromAtoB(platform, latAndLongArray);
+
+
+//     for (var i = 0; i < addressArray.length; i++) {
+//         var jqDeffered = $.ajax({
+//             url: 'https://geocoder.api.here.com/6.2/geocode.json',
+//             type: 'GET',
+//             dataType: 'jsonp',
+//             jsonp: 'jsoncallback',
+//             data: {
+//                 searchtext: addressArray[i],
+//                 app_id: 'wcU125hOha6uKl56A00d',
+//                 app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
+//                 gen: '9'
+//             }
+//         });
+
+//         jqDeffered.then(function (response) {
+//             var lat = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+//             var long = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+//             lat = lat.toString();
+//             long = long.toString();
+//             latAndLongArray.push(lat, long);
+//         });
+
+//     }
+
+
+
+
+//     //waypoint0 = toString(latAndLongArray[0]);
+
+//     //calculateRouteFromAtoB(platform, latAndLongArray);
+
+// };
 
 function calculateRouteFromAtoB(platform, latAndLongArray) {
     var router = platform.getRoutingService();
     var way0 = latAndLongArray[0];
     var way1 = latAndLongArray[1];
-    console.log("way 0 & 1 are; " + way0 + " " + way1);
 
     routeRequestParams = {
         mode: 'fastest;publicTransport',
@@ -97,7 +162,6 @@ function calculateRouteFromAtoB(platform, latAndLongArray) {
         routeattributes: 'waypoints,summary,shape,legs',
         maneuverattributes: 'direction,action'
     };
-    console.log(router);
     router.calculateRoute(
         routeRequestParams,
         onSuccess,
@@ -106,7 +170,6 @@ function calculateRouteFromAtoB(platform, latAndLongArray) {
 }
 
 function onSuccess(result) {
-    console.log(result);
     var route = result.response.route[0];
     addRouteShapeToMap(route);
     addManueversToMap(route);
@@ -227,8 +290,8 @@ function addManueversToMap(route) {
                 lat: maneuver.position.latitude,
                 lng: maneuver.position.longitude
             }, {
-                    icon: dotIcon
-                });
+                icon: dotIcon
+            });
             marker.instruction = maneuver.instruction;
             group.addObject(marker);
         }
