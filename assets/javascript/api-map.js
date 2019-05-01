@@ -1,17 +1,6 @@
-//$(document).ready(function () {
-
 function getLatAndLongForToAndFrom(from, to) {
-    var addressArray = [from, to];
-    var latAndLongArray = [];
-    var waypoint0 = [];
-    var waypoint1 = [];
-    var dataA = '';
-
-    var from = "100 South Wacker Drive Chicago IL";
-
-    async function doAjax(from) {
-
-        const result = await $.ajax({
+    $.when(
+        $.ajax({
             url: 'https://geocoder.api.here.com/6.2/geocode.json',
             type: 'GET',
             dataType: 'jsonp',
@@ -21,83 +10,43 @@ function getLatAndLongForToAndFrom(from, to) {
                 app_id: 'wcU125hOha6uKl56A00d',
                 app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
                 gen: '9'
-            },
-            //async: false,
-            complete: function (data) {
-                //dataA = data;
             }
-        });
-        return result;
-    }
-
-    doAjax(from).then(function (result) {
-        var lat = result.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
-        var long = result.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-        lat = lat.toString();
-        long = long.toString();
-        console.log(lat, long);
-        console.log(result);
-    });
-
-    //calculateRouteFromAtoB(platform, latAndLongArray);
-
-    console.log("data is: " + dataA)
-
-    for (var i = 0; i < addressArray.length; i++) {
-        var jqDeffered = $.ajax({
+        }),
+        $.ajax({
             url: 'https://geocoder.api.here.com/6.2/geocode.json',
             type: 'GET',
             dataType: 'jsonp',
             jsonp: 'jsoncallback',
             data: {
-                searchtext: addressArray[i],
+                searchtext: to,
                 app_id: 'wcU125hOha6uKl56A00d',
                 app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
                 gen: '9'
             }
-        });
-
-        jqDeffered.then(function (response) {
-            //console.log(response);
-            var lat = response.Response.View[0].Result[0].Location.DisplayPosition.Latitude;
-            var long = response.Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-            lat = lat.toString();
-            long = long.toString();
-            //console.log(lat, long);
-            latAndLongArray.push(lat, long);
-        });
-
-        //console.log("response" + response);
-    }
-
-
-
-
-    //console.log("lat and long array is: "+latAndLongArray);
-    //waypoint0 = toString(latAndLongArray[0]);
-    //console.log("way point 0 is: " + waypoint0);
-
-    //calculateRouteFromAtoB(platform, latAndLongArray);
-
+        }),
+    ).done(function(geocoder0, geocoder1){
+        lat0 = geocoder0[0].Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+        long0 = geocoder0[0].Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+        lat1 = geocoder1[0].Response.View[0].Result[0].Location.DisplayPosition.Latitude;
+        long1 = geocoder1[0].Response.View[0].Result[0].Location.DisplayPosition.Longitude;
+        waypoint0 = lat0.toString() + "," + long0.toString()
+        waypoint1 = lat1.toString() + "," + long1.toString()
+        calculateRouteFromAtoB(platform,waypoint0,waypoint1)
+    });
 };
 
-function calculateRouteFromAtoB(platform, latAndLongArray) {
+function calculateRouteFromAtoB(platform,waypoint0,waypoint1) {
     var router = platform.getRoutingService();
-    var way0 = latAndLongArray[0];
-    var way1 = latAndLongArray[1];
-    console.log("way 0 & 1 are; " + way0 + " " + way1);
+    console.log("way points are: ",waypoint0,waypoint1)
 
     routeRequestParams = {
         mode: 'fastest;publicTransport',
         representation: 'display',
-        waypoint0: way0,
-        waypoint1: way1,
-        //waypoint0: '41.85003,-87.65005', // Fernsehturm
-        //waypoint1: '41.7948,-87.5917', // Kurfürstendamm
+        waypoint0: waypoint0,
+        waypoint1: waypoint1,
         routeattributes: 'waypoints,summary,shape,legs',
         maneuverattributes: 'direction,action'
     };
-    console.log(router);
     router.calculateRoute(
         routeRequestParams,
         onSuccess,
@@ -106,7 +55,6 @@ function calculateRouteFromAtoB(platform, latAndLongArray) {
 }
 
 function onSuccess(result) {
-    console.log(result);
     var route = result.response.route[0];
     addRouteShapeToMap(route);
     addManueversToMap(route);
@@ -227,8 +175,8 @@ function addManueversToMap(route) {
                 lat: maneuver.position.latitude,
                 lng: maneuver.position.longitude
             }, {
-                    icon: dotIcon
-                });
+                icon: dotIcon
+            });
             marker.instruction = maneuver.instruction;
             group.addObject(marker);
         }
@@ -307,11 +255,7 @@ function addManueversToPanel(route) {
     routeInstructionsContainer.appendChild(nodeOL);
 }
 
-
 Number.prototype.toMMSS = function () {
     return Math.floor(this / 60) + ' minutes ' + (this % 60) + ' seconds.';
 }
 
-//calculateRouteFromAtoB(platform);
-
-//})
