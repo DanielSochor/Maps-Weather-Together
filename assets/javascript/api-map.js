@@ -31,11 +31,11 @@ function getLatAndLongForToAndFrom(from, to) {
         long1 = geocoder1[0].Response.View[0].Result[0].Location.DisplayPosition.Longitude;
         waypoint0 = lat0.toString() + "," + long0.toString()
         waypoint1 = lat1.toString() + "," + long1.toString()
-        calculateRouteFromAtoB(platform,waypoint0,waypoint1)
+        calculateRouteFromAtoBPublicTransit(platform,waypoint0,waypoint1)
     });
 };
 
-function calculateRouteFromAtoB(platform,waypoint0,waypoint1) {
+function calculateRouteFromAtoBPublicTransit(platform,waypoint0,waypoint1) {
     var router = platform.getRoutingService();
     console.log("way points are: ",waypoint0,waypoint1)
 
