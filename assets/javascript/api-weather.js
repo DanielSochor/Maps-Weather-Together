@@ -12,8 +12,6 @@ function getWeather(fromCity, toCity) {
         }),
     ).done(function (fromCityWeather, toCityWeather) {
 
-        console.log(fromCityWeather[0].main);
-
         if (fromCityWeather[0].main === "Rain") {
             $("#icon0").append("filter_drama")
         } else if (fromCityWeather[0].main === "Clear") {
