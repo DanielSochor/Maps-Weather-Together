@@ -15,8 +15,7 @@ $(document).ready(function () {
     if (fromCity == "" || toCity == "") {
       alert("Please be sure to add a city");
     } else {
-      getWeather(fromCity);
-      getWeather(toCity);
+      getWeather(fromCity,toCity);
       getLatAndLongForToAndFrom(fromAddressString, toAddressString);
     }
   });

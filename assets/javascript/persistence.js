@@ -9,7 +9,6 @@ function runFirebase() {
     };
 
     var database = firebase.database();
-
     firebase.initializeApp(config);
 
     var currentCallNumber;
