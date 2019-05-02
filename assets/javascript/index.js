@@ -12,8 +12,12 @@ $(document).ready(function () {
     var fromAddressString = fromStreet + " " + fromCity + " " + fromState + " " + fromZipCode;
     var toAddressString = toStreet + " " + toCity + " " + toState + " " + toZipCode;
 
-    getWeather(fromCity);
-    getWeather(toCity);
-    getLatAndLongForToAndFrom(fromAddressString, toAddressString);
+    if (fromCity == "" || toCity == "") {
+      alert("Please be sure to add a city");
+    } else {
+      getWeather(fromCity);
+      getWeather(toCity);
+      getLatAndLongForToAndFrom(fromAddressString, toAddressString);
+    }
   });
 });
