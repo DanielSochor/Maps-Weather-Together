@@ -6,23 +6,21 @@ function getWeather(city) {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-
-        // we can use same icon class for both tables 
         
-        // if(response.weather[0].main === "Rain"){
-        //     $("#icon").append("filter_drama")
-        // }
-        // else if(response.weather[0].main=== "Clear"){
-        //     $("#icon").append("wb_sunny")
-        // }
-        // else{
-        //     $("#icon").append("flash_on")
-        // };
+        if(response.weather[0].main === "Rain"){
+            $("#icon").append("filter_drama")
+        }
+        else if(response.weather[0].main=== "Clear"){
+            $("#icon").append("wb_sunny")
+        }
+        else{
+            $("#icon").append("flash_on")
+        };
 
-        // $("#maxTemp2").append("Max Temp: " + response.main.temp_max + " F");
-        // $("#minTemp2").append("Min Temp: " + response.main.temp_min + " F");
-        // $("#day2").append("Day Forecast: " + response.weather[0].main);
-        // $("#night2").append("Night Forecast: " + response.weather[1].main);
+        $("#maxTemp2").append("Max Temp: " + response.main.temp_max + " F");
+        $("#minTemp2").append("Min Temp: " + response.main.temp_min + " F");
+        $("#day2").append("Day Forecast: " + response.weather[0].main);
+        $("#night2").append("Night Forecast: " + response.weather[1].main);
 
 
     })

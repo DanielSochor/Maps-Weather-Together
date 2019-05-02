@@ -57,7 +57,11 @@ i .large {
     margin-left: 50px;
 }
 
-#weather {
+#weather1 {
+    background-color: #55b3d9;
+    margin-left: 210px;
+}
+#weather2 {
     background-color: #55b3d9;
     margin-left: 210px;
 }
@@ -68,6 +72,7 @@ i .large {
 }
 #directions {
     margin-left: 158px;
+    background-color: #f2ebc9;
 }
 
 footer {

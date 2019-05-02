@@ -30,7 +30,7 @@
         </nav>
     </div>
 
-    <div class="container" id="directions">
+    <div class="container" id="inputs">
 
         <!-- Row with address input cards -->
 
@@ -107,21 +107,25 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
-                <div class="transport-card card" id="mode">
-                    <div class="card-content black-text">
-                        <span class="card-title">Weather: local<i class="small material-icons right">wb_sunny</i></span>
-                        <p>
-                            Input weather api's for "local" here!
+                <div class="transport-card card" id="weather1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Weather: Local<i class="small material-icons right" id="icon"></i></span>
+                        <p id="maxTemp1">
+
+                        </p>
+                        <p id="minTemp1">
+                        </p>
+                        <p id="day1">
+                        </p>
+                        <p id= "night1">
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col s12 m6">
-            </div>
-            <div class="col s12 m6">
-                <div class="transport-card card" id="weather">
+                <div class="transport-card card" id="weather2">
                     <div class="card-content white-text">
-                        <span class="card-title">Weather<i class="small material-icons right" id= "icon"></i></span>
+                        <span class="card-title">Weather: Destination<i class="small material-icons right" id= "icon"></i></span>
                         <p id="maxTemp2">
 
                         </p>
@@ -169,26 +173,14 @@
     <script src="assets/javascript/api-public-transit.js"></script>
     <script src="assets/javascript/api-lat-long.js"></script>
     <script src="assets/javascript/api-weather.js"></script>
-<<<<<<< Updated upstream
+    <script src="assets/javascript/index.js"></script>
+    <script src="assets/javascript/api-driving-directions.js"></script>
+    <script src="assets/javascript/api-public-transit.js"></script>
+    <script src="assets/javascript/persistence.js"></script>
+    <script src="assets/javascript/api-lat-long.js"></script>
+    <script src="assets/javascript/api-weather.js"></script>
     <script src="assets/javascript/index.js"></script>
 
-
-
-
-
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script type="text/javascript" src="materialize/js/materialize.js"></script>
-        <script src="./assets/javascript/index.js"></script>
-        <script src="assets/javascript/api-weather.js"></script>
-        <script src="assets/javascript/api-map.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-        <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script> -->
-=======
-    <script src="assets/javascript/api-map.js"></script>
->>>>>>> Stashed changes
 </body>
 
 </html>
