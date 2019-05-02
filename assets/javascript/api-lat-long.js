@@ -31,6 +31,7 @@ function getLatAndLongForToAndFrom(from, to) {
         long1 = geocoder1[0].Response.View[0].Result[0].Location.DisplayPosition.Longitude;
         waypoint0 = lat0.toString() + "," + long0.toString()
         waypoint1 = lat1.toString() + "," + long1.toString()
+        //runFirebase();
         calculateRouteFromAtoBPublicTransit(platform,waypoint0,waypoint1);
         //calculateRouteFromAtoBPublicDriving(platform,waypoint0,waypoint1)
     });
