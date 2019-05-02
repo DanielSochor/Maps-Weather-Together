@@ -116,42 +116,33 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
-                <div class="transport-card card" id="mode">
-                    <div class="card-content black-text">
-                        <span class="card-title">Mode of Transportation</span>
-                        <form action="#">
-                            <label>
-                                <input class="mode" name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_walk</i></span>
-                            </label>
-                            <label>
-                                <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_bike</i></span>
-                            </label>
-                            <label>
-                                <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_car</i></span>
-                            </label>
-                            <label>
-                                <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_bus</i></span>
-                            </label>
-                            <label>
-                                <input name="group1" type="radio" />
-                                <span><i class="mode-icon small material-icons black-text">directions_transit</i></span>
-                            </label>
-                        </form>
+                <div class="transport-card card" id="weather1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Weather: Local<i class="small material-icons right" id="icon"></i></span>
+                        <p id="maxTemp1">
+
+                        </p>
+                        <p id="minTemp1">
+                        </p>
+                        <p id="day1">
+                        </p>
+                        <p id= "night1">
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col s12 m6">
-            </div>
-            <div class="col s12 m6">
-                <div class="transport-card card" id="weather">
+                <div class="transport-card card" id="weather2">
                     <div class="card-content white-text">
-                        <span class="card-title">Weather<i class="small material-icons right">wb_sunny</i></span>
-                        <p>
-                            Input weather api's for "local" and "destination" here!
+                        <span class="card-title">Weather: Destination<i class="small material-icons right" id= "icon"></i></span>
+                        <p id="maxTemp2">
+
+                        </p>
+                        <p id="minTemp2">
+                        </p>
+                        <p id="day2">
+                        </p>
+                        <p id= "night2">
                         </p>
                     </div>
                 </div>
@@ -161,15 +152,22 @@
                     <div id="map" style="width: 600px; height: 400px;"></div>
                 </div>
                 <div class="col s12 m6">
-                    <div id="panel">
-
+                    <div class="transport-card card" id="directions">
+                        <div class="card-content black-text">
+                            <span class="card-title">Directions<i
+                                    class="small material-icons right">directions</i></span>
+                            <div id="panel">
+                                <p>directions go here</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
-</div>
+    </div>
+    </div>
 <footer><h7>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h7></footer>
 <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
