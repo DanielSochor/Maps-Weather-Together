@@ -2,11 +2,12 @@ body {
     background-image: url('../photos/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: sans-serif;
 }
 
 #header {
     background-color: #a6728a;
-    font-family: Georgia;
+    
 }
 .card {
     width: 400px;
@@ -46,14 +47,35 @@ i .large {
     background-color: #d97e7e;
 }
 
+#submit-button {
+    float: right;
+    float: bottom;
+}
+
 #mode {
     background-color: #f2ebc9;
+    margin-left: 50px;
 }
+
+#weather1 {
+    background-color: #55b3d9;
+    margin-left: 210px;
+}
+#weather2 {
+    background-color: #55b3d9;
+    margin-left: 210px;
+}
+
 #map{
     background-color: #55b3d9;
     margin-top: 25px;
-    margin-left: 16px;
+    margin-left: 65px;
 }
+
+#directions {
+    margin-left: 158px;
+    background-color: #f2ebc9;
+
 #weather1{
     background-color: #55b3d9;
 }
@@ -228,6 +250,7 @@ code, h1, h2, h3{
 #directionsTable{
     background-color: #f2ebc9;
     padding: 25px;
+
 }
 
 footer {
