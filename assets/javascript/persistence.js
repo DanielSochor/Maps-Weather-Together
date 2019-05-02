@@ -7,17 +7,20 @@ function runFirebase() {
         storageBucket: "daniel-database.appspot.com",
         messagingSenderId: "772832539382"
     };
+
+    var database = firebase.database();
+
     firebase.initializeApp(config);
 
     var currentCallNumber;
     var newCallNumber;
 
-    database.ref().on("value", function(snapshot) {
+    database.ref().on("value", function (snapshot) {
         currentCallNumber = currentCallNumber;
         newCallNumber = currentCallNumber + 1;
     });
 
     database.ref("/currentCallNumber").set({
         currentCallNumber: newCallNumber,
-      });
+    });
 }
