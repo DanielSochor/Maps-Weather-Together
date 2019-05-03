@@ -39,4 +39,5 @@ function getWeather(fromCity, toCity) {
         $("#night2").append("Night Forecast: " + toCityWeather[0].weather[1].main);
 
     });
+
 };
