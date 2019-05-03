@@ -63,12 +63,16 @@ i .large {
     background-color: #55b3d9;
     margin-top: 25px;
     margin-left: 16px;
+    width: 540px;
+    height: 400px;
 }
 #weather1{
     background-color: #55b3d9;
+    width: 540px;
 }
 #weather2{
     background-color: #55b3d9;
+    width: 540px;
 }
 code, h1, h2, h3 {
     color: #124191;
@@ -238,9 +242,9 @@ code, h1, h2, h3 {
 #directionsTable{
     background-color: #f2ebc9;
     padding: 25px;
-    width: 445px;
-    margin-left: 25px;
+    width: 540px;
     margin-top: 25px;
+    margin-left: 15px;
 }
 
 footer {

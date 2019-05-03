@@ -1,18 +1,3 @@
-// function getWeather(city) {
-//     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +
-//         city + "&units=imperial&appid=9017eb1defd779b9b948d111f75e9386";
-//     $.ajax({
-//         url: queryURL,
-//         method: "GET"
-//     }).then(function (response) {
-//         //console.log(response);
-//         return (response);
-//     })
-// };
-
-
-
-
 function getWeather(fromCity, toCity) {
     $.when(
         $.ajax({
@@ -26,36 +11,33 @@ function getWeather(fromCity, toCity) {
             method: "GET"
         }),
     ).done(function (fromCityWeather, toCityWeather) {
-        console.log(fromCityWeather[0].weather[0].main);
-        if(fromCityWeather.weather[0].main === "Rain"){
-            $("#icon0").append("filter_drama")
-        }
-        else if(fromCityWeather.weather[0].main === "Clear"){
-            $("#icon0").append("wb_sunny")
-        }
-        else{
-            $("#icon0").append("flash_on")
+
+        if (fromCityWeather[0].main === "Rain") {
+            $("#icon0").text("filter_drama")
+        } else if (fromCityWeather[0].main === "Clear") {
+            $("#icon0").text("wb_sunny")
+        } else {
+            $("#icon0").text("flash_on")
         };
 
-        if(fromCityWeather.weather[0].main === "Rain"){
-            $("#icon1").append("filter_drama")
-        }
-        else if(fromCityWeather.weather[0].main === "Clear"){
-            $("#icon1").append("wb_sunny")
-        }
-        else{
-            $("#icon1").append("flash_on")
+        if (toCityWeather[0].main === "Rain") {
+            $("#icon1").text("filter_drama")
+        } else if (toCityWeather[0].main === "Clear") {
+            $("#icon1").text("wb_sunny")
+        } else {
+            $("#icon1").text("flash_on")
         };
 
-        $("#maxTemp1").append("Max Temp: " + fromCityWeather.main.temp_max + " F");
-        $("#minTemp1").append("Min Temp: " + fromCityWeather.main.temp_min + " F");
-        $("#day1").append("Day Forecast: " + fromCityWeather.weather[0].main);
-        $("#night1").append("Night Forecast: " + fromCityWeather.weather[1].main);
- 
-        $("#maxTemp2").append("Max Temp: " + toCityWeather.main.temp_max + " F");
-        $("#minTemp2").append("Min Temp: " + toCityWeather.main.temp_min + " F");
-        $("#day2").append("Day Forecast: " + toCityWeather.weather[0].main);
-        $("#night2").append("Night Forecast: " + toCityWeather.weather[1].main);
+        $("#maxTemp1").text("Max Temp: " + fromCityWeather[0].main.temp_max + " F");
+        $("#minTemp1").text("Min Temp: " + fromCityWeather[0].main.temp_min + " F");
+        $("#day1").text("Day Forecast: " + fromCityWeather[0].weather[0].main);
+        $("#night1").text("Night Forecast: " + fromCityWeather[0].weather[1].main);
+
+        $("#maxTemp2").text("Max Temp: " + toCityWeather[0].main.temp_max + " F");
+        $("#minTemp2").text("Min Temp: " + toCityWeather[0].main.temp_min + " F");
+        $("#day2").text("Day Forecast: " + toCityWeather[0].weather[0].main);
+        $("#night2").text("Night Forecast: " + toCityWeather[0].weather[1].main);
 
     });
+
 };
