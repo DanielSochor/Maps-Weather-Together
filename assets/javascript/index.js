@@ -11,6 +11,16 @@ $(document).ready(function () {
 
   var database = firebase.database();
 
+  var mode = "";
+
+  $(document).on("click", "#car", function () {
+    mode = "car";
+  });
+
+  $(document).on("click", "#bus", function () {
+    mode = "bus";
+  });
+
   $(document).on("click", "#submit-button", function () {
     var fromStreet = $("#a-street").val();
     var fromCity = $("#a-city").val();
@@ -29,7 +39,8 @@ $(document).ready(function () {
     } else {
       getWeather(fromCity, toCity);
       runFirebase(database);
-      getLatAndLongForToAndFrom(fromAddressString, toAddressString);
-    }
+      getLatAndLongForToAndFrom(fromAddressString, toAddressString, mode);
+    };
+
   });
 });

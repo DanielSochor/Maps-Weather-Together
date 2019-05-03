@@ -1,4 +1,4 @@
-function getLatAndLongForToAndFrom(from, to) {
+function getLatAndLongForToAndFrom(from, to,mode) {
     $.when(
         $.ajax({
             url: 'https://geocoder.api.here.com/6.2/geocode.json',
@@ -31,7 +31,12 @@ function getLatAndLongForToAndFrom(from, to) {
         long1 = geocoder1[0].Response.View[0].Result[0].Location.DisplayPosition.Longitude;
         waypoint0 = lat0.toString() + "," + long0.toString();
         waypoint1 = lat1.toString() + "," + long1.toString();
-        calculateRouteFromAtoBPublicTransit(platform,waypoint0,waypoint1);
-        calculateRouteFromAtoBDriving(platform,waypoint0,waypoint1);
+
+
+        if (mode == "car"){
+            calculateRouteFromAtoBDriving(platform,waypoint0,waypoint1); 
+          } else {
+            calculateRouteFromAtoBPublicTransit(platform,waypoint0,waypoint1);
+          };
     });
 };
