@@ -29,9 +29,9 @@ function getLatAndLongForToAndFrom(from, to) {
         long0 = geocoder0[0].Response.View[0].Result[0].Location.DisplayPosition.Longitude;
         lat1 = geocoder1[0].Response.View[0].Result[0].Location.DisplayPosition.Latitude;
         long1 = geocoder1[0].Response.View[0].Result[0].Location.DisplayPosition.Longitude;
-        waypoint0 = lat0.toString() + "," + long0.toString()
-        waypoint1 = lat1.toString() + "," + long1.toString()
+        waypoint0 = lat0.toString() + "," + long0.toString();
+        waypoint1 = lat1.toString() + "," + long1.toString();
         calculateRouteFromAtoBPublicTransit(platform,waypoint0,waypoint1);
-        //calculateRouteFromAtoBPublicDriving(platform,waypoint0,waypoint1)
+        calculateRouteFromAtoBDriving(platform,waypoint0,waypoint1);
     });
 };

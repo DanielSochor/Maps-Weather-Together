@@ -56,8 +56,8 @@ var map = new H.Map(mapContainer,
     defaultLayers.normal.map, {
         //pixelRatio: pixelRatio
         center: {
-            lat: 52.5160,
-            lng: 13.3779
+            lat: 41.8781,
+            lng: -87.6298
         },
         zoom: 13
     });
