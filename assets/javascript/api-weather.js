@@ -13,30 +13,30 @@ function getWeather(fromCity, toCity) {
     ).done(function (fromCityWeather, toCityWeather) {
 
         if (fromCityWeather[0].main === "Rain") {
-            $("#icon0").append("filter_drama")
+            $("#icon0").text("filter_drama")
         } else if (fromCityWeather[0].main === "Clear") {
-            $("#icon0").append("wb_sunny")
+            $("#icon0").text("wb_sunny")
         } else {
-            $("#icon0").append("flash_on")
+            $("#icon0").text("flash_on")
         };
 
         if (toCityWeather[0].main === "Rain") {
-            $("#icon1").append("filter_drama")
+            $("#icon1").text("filter_drama")
         } else if (toCityWeather[0].main === "Clear") {
-            $("#icon1").append("wb_sunny")
+            $("#icon1").text("wb_sunny")
         } else {
-            $("#icon1").append("flash_on")
+            $("#icon1").text("flash_on")
         };
 
-        $("#maxTemp1").append("Max Temp: " + fromCityWeather[0].main.temp_max + " F");
-        $("#minTemp1").append("Min Temp: " + fromCityWeather[0].main.temp_min + " F");
-        $("#day1").append("Day Forecast: " + fromCityWeather[0].weather[0].main);
-        $("#night1").append("Night Forecast: " + fromCityWeather[0].weather[1].main);
+        $("#maxTemp1").text("Max Temp: " + fromCityWeather[0].main.temp_max + " F");
+        $("#minTemp1").text("Min Temp: " + fromCityWeather[0].main.temp_min + " F");
+        $("#day1").text("Day Forecast: " + fromCityWeather[0].weather[0].main);
+        $("#night1").text("Night Forecast: " + fromCityWeather[0].weather[1].main);
 
-        $("#maxTemp2").append("Max Temp: " + toCityWeather[0].main.temp_max + " F");
-        $("#minTemp2").append("Min Temp: " + toCityWeather[0].main.temp_min + " F");
-        $("#day2").append("Day Forecast: " + toCityWeather[0].weather[0].main);
-        $("#night2").append("Night Forecast: " + toCityWeather[0].weather[1].main);
+        $("#maxTemp2").text("Max Temp: " + toCityWeather[0].main.temp_max + " F");
+        $("#minTemp2").text("Min Temp: " + toCityWeather[0].main.temp_min + " F");
+        $("#day2").text("Day Forecast: " + toCityWeather[0].weather[0].main);
+        $("#night2").text("Night Forecast: " + toCityWeather[0].weather[1].main);
 
     });
 
