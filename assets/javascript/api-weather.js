@@ -13,19 +13,29 @@ function getWeather(fromCity, toCity) {
     ).done(function (fromCityWeather, toCityWeather) {
 
         if (fromCityWeather[0].main === "Rain") {
-            $("#icon0").text("filter_drama")
-        } else if (fromCityWeather[0].main === "Clear") {
-            $("#icon0").text("wb_sunny")
-        } else {
             $("#icon0").text("flash_on")
+        } if (fromCityWeather[0].main === "Clear") {
+            $("#icon0").text("wb_sunny")
+        } if (fromCityWeather[0].main === "Clouds"){
+            $("#icon0").text("cloud")
+        } if(fromCityWeather[0].main === "Snow"){
+            $("#icon0").text("ac_unit")
+        }
+        else {
+            $("#icon0").text("invert_colors")
         };
 
         if (toCityWeather[0].main === "Rain") {
-            $("#icon1").text("filter_drama")
-        } else if (toCityWeather[0].main === "Clear") {
-            $("#icon1").text("wb_sunny")
-        } else {
             $("#icon1").text("flash_on")
+        } if (toCityWeather[0].main === "Clouds"){
+            $("#icon1").text("cloud")
+        } if (toCityWeather[0].main === "Clear") {
+            $("#icon1").text("wb_sunny")
+        } if (toCityWeather[0].main === "Snow") {
+            $("#icon1").text("ac_unit")
+        } 
+        else{
+            $("#icon1").text("invert_colors")
         };
         
         $("#maxTemp1").text("Max Temp: " + Math.round(fromCityWeather[0].main.temp_max) + " F");
