@@ -15,7 +15,6 @@ function calculateRouteFromAtoBDriving (platform,waypoint0,waypoint1) {
       onSuccess,
       onError
     );
-    
   }
   /**
    * This function will be called once the Routing REST API provides a response

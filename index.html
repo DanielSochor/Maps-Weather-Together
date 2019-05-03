@@ -21,7 +21,8 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- Fixed Navbar -->
+
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper" id="header">
@@ -30,9 +31,9 @@
         </nav>
     </div>
 
-    <div class="container" id="inputs">
+    <div class="container" id="directions">
 
-        <!-- Row with address input cards -->
+        <!-- Row with address input cards and mode of transportation -->
 
         <div class="row">
 
@@ -67,45 +68,78 @@
                     </div>
                 </div>
             </div>
-            <div class="card" id="to">
-                <div class="card-content white-text">
-                    <span class="card-title"><i class="small material-icons left">location_on</i>To</span>
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input placeholder="Street" id="b-street" type="text" class="validate">
-                                <label for="street-address"></label>
+
+            <!-- Mode of Transportation -->
+
+            <div class="card-content mode-card" id="mode">
+                <span class="card-title">
+                    <h3>Mode:</h3>
+                </span>
+                <label>
+                    <input name="group1" type="radio" />
+                    <span></span>
+                    <i class="medium material-icons mode-icon">directions_car</i>
+                </label>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" />
+                        <span></span>
+                        <i class="medium material-icons mode-icon">directions_bus</i>
+                    </label>
+
+                </p>
+            </div>
+            <div class="col l4">
+
+                <!-- Second input card with id b -->
+
+                <div class="card" id="to">
+                    <div class="card-content white-text">
+                        <span class="card-title"><i class="small material-icons left">location_on</i>To</span>
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input placeholder="Street" id="b-street" type="text" class="validate">
+                                    <label for="street-address"></label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input placeholder="City" id="b-city" type="text" class="validate">
-                                <label for="city"></label>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="City" id="b-city" type="text" class="validate">
+                                    <label for="city"></label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input placeholder="State" id="b-state" type="text" class="validate">
+                                    <label for="state"></label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input placeholder="Zip Code" id="b-zip" type="text" class="validate">
+                                    <label for="zip_code"></label>
+                                </div>
                             </div>
-                            <div class="input-field col s12">
-                                <input placeholder="State" id="b-state" type="text" class="validate">
-                                <label for="state"></label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input placeholder="Zip Code" id="b-zip" type="text" class="validate">
-                                <label for="zip_code"></label>
-                            </div>
-                        </div>
-                    </form>
-                    <button id="submit-button" class="btn waves-effect blue-light right" type="submit"
-                    name="action">GO!
-                    <i class="material-icons right">directions</i>
-                    </button>
+                        </form>
+                    </div>
                 </div>
+                <button id="submit-button" class="btn waves-effect blue-light right" type="submit" name="action">GO!
+                    <i class="material-icons right">directions</i>
+                </button>
             </div>
         </div>
+
     </div>
+
+    <!-- Weather cards -->
+
     <div class="container">
         <div class="row">
-            <div class="col s12 m6">
+
+            <!-- Local Weather -->
+
+            <div class="col s12 m6 l4">
                 <div class="transport-card card" id="weather1">
                     <div class="card-content white-text">
-                        <span class="card-title">Weather: Local<i class="small material-icons right" id="icon0"></i></span>
+                        <span class="card-title">Weather: Local<i class="small material-icons right"
+                                id="icon"></i></span>
                         <p id="maxTemp1">
 
                         </p>
@@ -113,15 +147,20 @@
                         </p>
                         <p id="day1">
                         </p>
-                        <p id= "night1">
+                        <p id="night1">
                         </p>
                     </div>
                 </div>
             </div>
+            <div class="col s12 m6"></div>
+
+            <!-- Destination Weather -->
+            
             <div class="col s12 m6">
                 <div class="transport-card card" id="weather2">
                     <div class="card-content white-text">
-                        <span class="card-title">Weather: Destination<i class="small material-icons right" id= "icon1"></i></span>
+                        <span class="card-title">Weather: Destination<i class="small material-icons right"
+                                id="icon"></i></span>
                         <p id="maxTemp2">
 
                         </p>
@@ -129,19 +168,19 @@
                         </p>
                         <p id="day2">
                         </p>
-                        <p id= "night2">
+                        <p id="night2">
                         </p>
                     </div>
                 </div>
             </div>
+
+            <!-- Map and directions -->
+
             <div class="row">
                 <div class="col s12 m6">
-                    <div id="map" style="width: 600px; height: 400px;"></div>
-                </div>
-                <div class= "col s12 m6">
+                    <div id="map"></div>
                 </div>
                 <div class="col s12 m6">
-
                     <div class="transport-card card" id="directionsTable">
                         <div class="card-content black-text">
                             <span class="card-title">Directions<i
@@ -156,25 +195,25 @@
 
         </div>
     </div>
-</div>
 
-<footer><h7>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h7></footer>
-    
+    <!-- Footer -->
+
+    <footer>
+        <h7>copyright &lt;&copy;&gt; 2019, made by the Trilogy Quadrant</h7>
+    </footer>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-core.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-service.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
     <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="assets/javascript/api-driving-directions.js"></script>
     <script src="assets/javascript/api-public-transit.js"></script>
     <script src="assets/javascript/persistence.js"></script>
     <script src="assets/javascript/api-lat-long.js"></script>
     <script src="assets/javascript/api-weather.js"></script>
     <script src="assets/javascript/index.js"></script>
-
 </body>
 
 </html>

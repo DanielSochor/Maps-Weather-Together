@@ -23,9 +23,8 @@ $(document).ready(function () {
     var fromAddressString = fromStreet + " " + fromCity + " " + fromState + " " + fromZipCode;
     var toAddressString = toStreet + " " + toCity + " " + toState + " " + toZipCode;
 
-    if (fromCity == "" || toCity == "" || fromCity == "Specify City" || toCity || "Specify City") {
-      $("#a-city").text("Specify City");
-      $("#b-city").text("Specify City");
+    if (fromCity == "" || toCity == "") {
+      alert("Please be sure to add a city");
     } else {
       getWeather(fromCity, toCity);
       runFirebase(database);
