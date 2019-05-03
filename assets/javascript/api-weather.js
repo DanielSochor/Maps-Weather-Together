@@ -26,7 +26,7 @@ function getWeather(fromCity, toCity) {
             method: "GET"
         }),
     ).done(function (fromCityWeather, toCityWeather) {
-
+        console.log(fromCityWeather[0].weather[0].main);
         if(fromCityWeather.weather[0].main === "Rain"){
             $("#icon0").append("filter_drama")
         }
