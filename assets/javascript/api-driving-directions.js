@@ -64,15 +64,15 @@ var platform = new H.service.Platform({
 });
 var defaultLayers = platform.createDefaultLayers();
 
-//Step 2: initialize a map - this map is centered over Berlin
-var map = new H.Map(mapContainer,
-  defaultLayers.normal.map, {
-    center: {
-      lat: 41.8781,
-      lng: -87.6298
-    },
-    zoom: 13
-  });
+//Step 2: initialize a map
+//var map = new H.Map(mapContainer,
+  //defaultLayers.normal.map, {
+    //center: {
+      //lat: 41.8781,
+      //lng: -87.6298
+    //},
+    //zoom: 13
+  //});
 
 //Step 3: make the map interactive
 // MapEvents enables the event system
