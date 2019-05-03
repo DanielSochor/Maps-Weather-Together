@@ -7,7 +7,6 @@ body {
 
 #header {
     background-color: #a6728a;
-    
 }
 .card {
     width: 400px;
@@ -75,7 +74,7 @@ i .large {
 #directions {
     margin-left: 158px;
     background-color: #f2ebc9;
-
+}
 #weather1{
     background-color: #55b3d9;
 }
