@@ -40,13 +40,13 @@ function getWeather(fromCity, toCity) {
         
         $("#maxTemp1").text("Max Temp: " + Math.round(fromCityWeather[0].main.temp_max) + " F");
         $("#minTemp1").text("Min Temp: " + Math.round(fromCityWeather[0].main.temp_min) + " F");
-        $("#day1").text("Day Forecast: " + fromCityWeather[0].weather[0].main);
-        $("#night1").text("Night Forecast: " + fromCityWeather[0].weather[1].main);
+        $("#day1").text("Forecast: " + fromCityWeather[0].weather[0].main);
+        //$("#night1").text("Night Forecast: " + fromCityWeather[0].weather[1].main);
 
         $("#maxTemp2").text("Max Temp: " + Math.round(toCityWeather[0].main.temp_max) + " F");
         $("#minTemp2").text("Min Temp: " + Math.round(toCityWeather[0].main.temp_min) + " F");
-        $("#day2").text("Day Forecast: " + toCityWeather[0].weather[0].main);
-        $("#night2").text("Night Forecast: " + toCityWeather[0].weather[1].main);
+        $("#day2").text("Forecast: " + toCityWeather[0].weather[0].main);
+        //$("#night2").text("Night Forecast: " + toCityWeather[0].weather[1].main);
 
     });
 

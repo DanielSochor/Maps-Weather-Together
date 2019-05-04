@@ -32,37 +32,8 @@ function onError(error) {
   alert('Ooops!');
 }
 
-
 var mapContainer = document.getElementById('map'),
   routeInstructionsContainer = document.getElementById('panel');
-
-//Step 1: initialize communication with the platform
-var platform = H.service.Platform({
-  app_id: 'wcU125hOha6uKl56A00d',
-  app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
-  useCIT: true,
-  useHTTPS: true,
-});
-var defaultLayers = platform.createDefaultLayers();
-
-//Step 2: initialize a map
-var map = new H.Map(mapContainer,
-  defaultLayers.normal.map, {
-    center: {
-      lat: 41.8781,
-      lng: -87.6298
-    },
-    zoom: 13
-  });
-
-//Step 3: make the map interactive
-// MapEvents enables the event system
-// Behavior implements default interactions for pan/zoom (also on mobile touch environments)
-var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-// Create the default UI components
-var ui = H.ui.UI.createDefault(map, defaultLayers);
-ui.setUnitSystem(H.ui.UnitSystem.IMPERIAL);
 
 var bubble;
 
