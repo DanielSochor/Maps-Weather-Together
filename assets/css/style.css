@@ -74,6 +74,17 @@ i .large {
     background-color: #55b3d9;
     width: 540px;
 }
+
+#aa-city.active{
+  color: black;
+  font-size: 150%;
+}
+
+#bb-city.active{
+  color: black;
+  font-size: 150%;
+}
+
 code, h1, h2, h3 {
     color: #124191;
     letter-spacing: -0.03em;

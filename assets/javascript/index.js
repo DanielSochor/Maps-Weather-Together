@@ -34,8 +34,8 @@ $(document).ready(function () {
     var toAddressString = toStreet + " " + toCity + " " + toState + " " + toZipCode;
 
     if (fromCity == "" || toCity == "" || fromCity == "Specify City" || toCity == "Specify City") {
-      $("#a-city").text("Specify City");
-      $("#b-city").text("Specify City");
+      $("#aa-city").text("Specify City!");
+      $("#bb-city").text("Specify City!");
     } else {
       getWeather(fromCity, toCity);
       runFirebase(database);
