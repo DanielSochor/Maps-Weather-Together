@@ -2,12 +2,14 @@ function calculateRouteFromAtoBPublicTransit(platform, waypoint0, waypoint1) {
     var router = platform.getRoutingService();
 
     routeRequestParams = {
+        language: 'en-us',
+        metricSystem: 'imperial',
         mode: 'fastest;publicTransport',
         representation: 'display',
         waypoint0: waypoint0,
         waypoint1: waypoint1,
         routeattributes: 'waypoints,summary,shape,legs',
-        maneuverattributes: 'direction,action'
+        maneuverattributes: 'direction,action',
     };
     router.calculateRoute(
         routeRequestParams,
@@ -30,8 +32,6 @@ function onError(error) {
     alert('Ooops!');
 }
 
-//Boilerplate map initialization code starts below:
-
 var mapContainer = document.getElementById('map'),
     routeInstructionsContainer = document.getElementById('panel');
 
@@ -39,10 +39,8 @@ var mapContainer = document.getElementById('map'),
 var platform = new H.service.Platform({
     app_id: 'wcU125hOha6uKl56A00d',
     app_code: 'DD3bbz78Ju_Tb88oKzx0kA',
-    //         app_id: 'DemoAppId01082013GAL',
-    //   app_code: 'AJKnXv84fjrb0KIHawS0Tg',
     useCIT: true,
-    useHTTPS: true
+    useHTTPS: true,
 });
 //var pixelRatio = window.devicePixelRatio || 1;
 var defaultLayers = platform.createDefaultLayers({
@@ -68,6 +66,7 @@ var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
 // Create the default UI components
 var ui = H.ui.UI.createDefault(map, defaultLayers);
+ui.setUnitSystem(H.ui.UnitSystem.IMPERIAL);
 
 var bubble;
 
@@ -137,8 +136,8 @@ function addManueversToMap(route) {
                 lat: maneuver.position.latitude,
                 lng: maneuver.position.longitude
             }, {
-                icon: dotIcon
-            });
+                    icon: dotIcon
+                });
             marker.instruction = maneuver.instruction;
             group.addObject(marker);
         }
@@ -173,15 +172,20 @@ function addWaypointsToPanel(waypoints) {
 function addSummaryToPanel(summary) {
     var summaryDiv = document.createElement('div'),
         content = '';
-    content += '<b>Total distance</b>: ' + summary.distance + 'm. <br/>';
+    content += '<b>Total distance</b>: ' + convertToImperial(summary.distance) + '<br/>';
     content += '<b>Travel Time</b>: ' + summary.travelTime.toMMSS() + ' (in current traffic)';
-
-
     summaryDiv.style.fontSize = 'small';
     summaryDiv.style.marginLeft = '5%';
     summaryDiv.style.marginRight = '5%';
     summaryDiv.innerHTML = content;
     routeInstructionsContainer.appendChild(summaryDiv);
+}
+
+function convertToImperial(distance) {
+    var miles = Math.trunc(distance / 1609.34);
+    var remainder = distance % 1609.34;
+    var feet = Math.trunc(remainder / 3.28084);
+    return (miles + " miles and " + feet + " feet.");
 }
 
 function addManueversToPanel(route) {
@@ -213,12 +217,18 @@ function addManueversToPanel(route) {
             nodeOL.appendChild(li);
         }
     }
-
     routeInstructionsContainer.appendChild(nodeOL);
 }
 
 Number.prototype.toMMSS = function () {
-    return Math.floor(this / 60) + ' minutes ' + (this % 60) + ' seconds.';
+    var hours = Math.trunc(this / 3600);
+    var remainderMinutes = this % 3600;
+    var minutes = Math.trunc(remainderMinutes / 60);
+    var seconds = this % 60;
+    var seconds = Math.trunc(seconds)
+    if (hours == 0) {
+        return (minutes + ' minutes and ' + seconds + ' seconds.');
+    } else {
+        return (hours + ' hours and ' + minutes + ' minutes and ' + seconds + ' seconds.');
+    }
 }
-
-//};
