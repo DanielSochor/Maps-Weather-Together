@@ -1,8 +1,6 @@
 # Project1
-Our First Trilogy BootCamp Project
-
 Where Ya Going?
-The purpose of this application is to provide you with the fastest route and weather between two locations. It has the ability to perform via standard vehicle or public transit.
+The purpose of this application is to provide you with the best route to get to your destination via public transit or driving. Additionality it provides the weather forecast at your starting point and your destination.
 
 Instructions:
 1.) Enter a starting location within the first input field.
@@ -12,46 +10,26 @@ Instructions:
 5.) You will be provided with local weather, destination weather, a mapped route between both locations, and a set of directions that provide the fastest route via your chosen method of transportation. 
 
 API's used:
-1.) openweathermap.org
-2.) geocoder.api.here.com
-3.)
-4.)
+1.) Open Weather
+2.) Here Geocoder
+3.) Here Public Transit Routing
+4.) Here Driving Routing
 
 Other Technologies:
 1.) Materialize CSS library
 2.) Firebase
 
-
 Project Requirements Checklist:
+•Includes 4 APIs
+•Includes multiple dependent AJAX calls
+•Utilized the Materialize CSS Framework
+•Includes a polished front end aided by Adobe Colorwheel
+•Includes good quality coding standards including separated JavaScript files and very limited use of global scope
+•Doesn’t utilize alerts, confirms, or prompts
+•The directions and weather both utilized repeating elements
+•Uses Materialize as an alternative CSS framework
+•Is deployed on Github pages
+•Includes user input validation for the current and destination inputs
+•Stores the number of API calls on firebase
 
-•Must use at least two APIs
--Complete! (four used)
-
-•Must use AJAX to pull data
--Complete!
-
-•Must utilize at least one new library or technology that we haven’t discussed
--Complete! (Materialize CSS Framework, Geocoding)
-
-•Must have a polished frontend / UI
--Complete!
-
-•Must meet good quality coding standards (indentation, scoping, naming)
--Complete!
-
-•Must NOT use alerts, confirms, or prompts (look into modals!)
--Complete!
-
-•Must have some sort of repeating element (table, columns, etc)
-Complete! (Directions table, Weather table)
-
-•Must use Bootstrap or Alternative CSS Framework
--Complete! (Materialize)
-
-•Must be Deployed (Github Pages)
--Complete!
-
-•Must have User Input Validation
--Complete! (Current location and destination inputs)
-
-Contributors: Zachary Johnson, Clark Alms, Michael Gluszek, Daniel Socher.
+Project contributors include: Zachary Johnson, Clark Alms, Michael Gluszek, Daniel Sochor. Future releases of this app may include more transportation modes and the generation of a custom Spotify playlist which matches the length of your journey.
