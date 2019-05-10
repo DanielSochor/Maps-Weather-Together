@@ -1,5 +1,4 @@
-# Project1
-Where Ya Going?
+# What's the best route to get there?
 The purpose of this application is to provide you with the best route to get to your destination via public transit or driving. Additionality it provides the weather forecast at your starting point and your destination.
 
 Instructions:
