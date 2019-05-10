@@ -2,6 +2,7 @@
 The purpose of this application is to provide you with the best route to get to your destination via public transit or driving. Additionality it provides the weather forecast at your starting point and your destination.
 
 Instructions:
+
 1.) Enter a starting location within the first input field.
 
 2.) Choose a mode of transport (vehicle or public transit).
@@ -12,37 +13,40 @@ Instructions:
 
 5.) You will be provided with local weather, destination weather, a mapped route between both locations, and a set of directions that provide the fastest route via your chosen method of transportation. 
 
+
 API's used:
 
-1.) Open Weather
+• Open Weather
 
-2.) Here Geocoder
+• Here Geocoder
 
-3.) Here Public Transit Routing
+• Here Public Transit Routing
 
-4.) Here Driving Routing
+• Here Driving Routing
+
 
 Other Technologies:
 
-1.) Materialize CSS library
+• Materialize CSS library
 
-2.) Firebase
+• Firebase
+
 
 Project Requirements Checklist:
 
-•Includes 4 APIs
+• Includes 4 APIs
 
-•Includes multiple dependent AJAX calls
+• Includes multiple dependent AJAX calls
 
-•Utilized the Materialize CSS Framework
+• Utilized the Materialize CSS Framework
 
-•Includes a polished front end aided by Adobe Colorwheel
+• Includes a polished front end aided by Adobe Colorwheel
 
-•Includes good quality coding standards including separated JavaScript files and very limited use of global scope
+• Includes good quality coding standards including separated JavaScript files and very limited use of global scope
 
-•Doesn’t utilize alerts, confirms, or prompts
+• Doesn’t utilize alerts, confirms, or prompts
 
-•The directions and weather both utilized repeating elements
+• The directions and weather both utilized repeating elements
 
 •Uses Materialize as an alternative CSS framework
 
